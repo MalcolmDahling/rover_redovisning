@@ -12,7 +12,7 @@ export const HeaderStyle = recipe({
 
     zIndex: 1,
 
-    backgroundColor: Colors.darkGray,
+    backgroundColor: Colors.green,
     borderBottom: `2px solid ${Colors.lightGray}`,
   },
 });

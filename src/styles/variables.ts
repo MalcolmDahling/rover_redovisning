@@ -4,6 +4,8 @@ export const Colors = {
 
   darkGray: '#171717',
   lightGray: '#545454',
+
+  green: '#405444',
 };
 
 export const Breakpoints = {

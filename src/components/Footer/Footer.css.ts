@@ -5,7 +5,7 @@ export const FooterStyle = recipe({
   base: {
     width: '100%',
 
-    backgroundColor: Colors.darkGray,
+    backgroundColor: Colors.green,
   },
 });
 
