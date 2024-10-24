@@ -22,7 +22,7 @@ export const data: data[] = [
       Vårt fokus är det personliga mötet där du som kund har en kontinuitet med samma kontaktperson hos oss. I en bransch där stora byråer ofta har omsättning på personal och assistenter som byts ut, är våra kunder nöjda med att alltid veta vem de kan bolla frågor med från vår sida.
       
       Vi befinner oss i Nacka, men vi jobbar digitalt och har kunder i hela landet.`,
-    imageURL: '/images/bild0.jpg',
+    imageURL: '',
     backgroundImageURL: '/images/background.jpg',
     textColor: 'white',
     backgroundColor: '',

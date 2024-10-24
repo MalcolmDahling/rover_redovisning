@@ -2,9 +2,12 @@ import useBreakpoint from 'use-breakpoint';
 import Paragraph from '../Paragraph/Paragraph';
 import { FooterGridContainerStyle, FooterItemStyle, FooterLineStyle, FooterStyle } from './Footer.css';
 import { Breakpoints } from '@/styles/variables';
+import Heading from '../Heading/Heading';
 
 export default function Footer() {
   const { breakpoint } = useBreakpoint(Breakpoints);
+
+  const headings = ['ADRESS', 'KONTAKT', 'Godkänd för F-skatt'];
 
   const text = [
     `Rovér Redovisning i Nacka
@@ -14,9 +17,7 @@ export default function Footer() {
     `070-493 16 76
     pr@roverredovisning.se`,
 
-    `Godkänd för F-skatt
-    
-    Företaget har en policy kring personuppgifter/GPDR och personuppgiftbiträdesavtal med sina kunder.
+    `Företaget har en policy kring personuppgifter/GPDR och personuppgiftbiträdesavtal med sina kunder.
     Kontakta oss för mer information kring hur vi hanterar personuppgifter.`,
   ];
   return (
@@ -28,6 +29,15 @@ export default function Footer() {
             key={i}
             className={FooterItemStyle({ borderLeft: i !== 0 && breakpoint !== 'mobile' })}
           >
+            <Heading
+              type="h3"
+              color="white"
+              bold={true}
+              fontSize="small"
+              margin={false}
+            >
+              {headings[i]}
+            </Heading>
             <Paragraph
               color="white"
               fontSize="small"

@@ -9,13 +9,14 @@ type props = {
   children: React.ReactNode;
   fontSize: 'small' | 'medium' | 'large';
   bold: boolean;
+  margin?: boolean;
 };
 
 export default function Heading(props: props) {
   const Component = props.type;
 
   return (
-    <Component className={HeadingStyle({ type: props.type, color: props.color, fontSize: props.fontSize, bold: props.bold })}>
+    <Component className={HeadingStyle({ type: props.type, color: props.color, fontSize: props.fontSize, bold: props.bold, margin: props.margin })}>
       {props.children}
       <div className={HeadingMultiLineStyle()}>
         <span>{props.text}</span>

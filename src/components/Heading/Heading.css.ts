@@ -46,9 +46,15 @@ export const HeadingStyle = recipe({
     bold: {
       true: {
         fontWeight: 'bold',
+        WebkitTextStroke: `1px ${Colors.white}`,
       },
       false: {
         fontWeight: 'normal',
+      },
+    },
+    margin: {
+      false: {
+        margin: 0,
       },
     },
   },

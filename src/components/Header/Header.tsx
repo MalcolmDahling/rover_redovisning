@@ -23,7 +23,7 @@ export default function Header() {
           text2="REDOVISNING"
           color="white"
           fontSize={breakpoint === 'mobile' ? 'medium' : 'large'}
-          bold={false}
+          bold={true}
         >
           <Logo></Logo>
         </Heading>
