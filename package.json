@@ -1,0 +1,29 @@
+{
+  "name": "rover-redovisning2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.16.0",
+    "@vanilla-extract/recipes": "^0.5.5",
+    "@vanilla-extract/sprinkles": "^1.6.3",
+    "keen-slider": "^6.8.6",
+    "next": "14.2.15",
+    "react": "^18",
+    "react-dom": "^18",
+    "recoil": "^0.7.7",
+    "use-breakpoint": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@vanilla-extract/next-plugin": "^2.4.6",
+    "typescript": "^5"
+  }
+}
