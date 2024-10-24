@@ -86,7 +86,7 @@ export const data: data[] = [
           
           MAILFORMULÄR HÄR?`,
     imageURL: '',
-    backgroundImageURL: '/images/4.jpg',
+    backgroundImageURL: '/images/5.jpg',
     textColor: 'white',
     backgroundColor: '#1e81b0',
     blurBackgroundImage: true,
