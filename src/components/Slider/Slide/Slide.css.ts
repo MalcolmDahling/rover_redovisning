@@ -6,6 +6,7 @@ export const SlideContainerStyle = recipe({
     position: 'relative',
     minHeight: '100vh',
     width: '100vw',
+    flexShrink: 0,
 
     display: 'flex',
     alignItems: 'center',
