@@ -39,7 +39,6 @@ export const FooterItemStyle = recipe({
     flexBasis: '33%',
 
     display: 'flex',
-    alignItems: 'end',
 
     '@media': {
       [MediaBreakpoints.mobile]: {
