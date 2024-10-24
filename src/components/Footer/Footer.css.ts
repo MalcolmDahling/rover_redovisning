@@ -11,7 +11,7 @@ export const FooterStyle = recipe({
 
 export const FooterLineStyle = recipe({
   base: {
-    borderTop: `2px solid ${Colors.lightGray}`,
+    borderTop: `2px solid ${Colors.darkGray}`,
   },
 });
 
