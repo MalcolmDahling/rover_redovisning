@@ -11,7 +11,7 @@ type props = {
   bold: boolean;
   margin?: boolean;
   onClick?: () => void;
-  cursorPointer: boolean;
+  cursorPointer?: boolean;
 };
 
 export default function Heading(props: props) {
