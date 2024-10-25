@@ -57,6 +57,11 @@ export const HeadingStyle = recipe({
         margin: 0,
       },
     },
+    cursorPointer: {
+      true: {
+        cursor: 'pointer',
+      },
+    },
   },
 });
 

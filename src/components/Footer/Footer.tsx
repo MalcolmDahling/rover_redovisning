@@ -3,6 +3,7 @@ import Paragraph from '../Paragraph/Paragraph';
 import { FooterGridContainerStyle, FooterItemStyle, FooterLineStyle, FooterStyle } from './Footer.css';
 import { Breakpoints } from '@/styles/variables';
 import Heading from '../Heading/Heading';
+import Socials from './Socials/Socials';
 
 export default function Footer() {
   const { breakpoint } = useBreakpoint(Breakpoints);
@@ -47,6 +48,8 @@ export default function Footer() {
           </div>
         ))}
       </div>
+
+      <Socials></Socials>
     </footer>
   );
 }

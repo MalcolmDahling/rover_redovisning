@@ -4,7 +4,6 @@ import { recipe } from '@vanilla-extract/recipes';
 export const SlideContainerStyle = recipe({
   base: {
     position: 'relative',
-    minHeight: '100vh',
     width: '100vw',
     flexShrink: 0,
 

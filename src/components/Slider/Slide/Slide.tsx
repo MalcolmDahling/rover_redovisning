@@ -25,7 +25,7 @@ export default function Slide(props: props) {
       <div className={SlideInnerContainerStyle()}>
         {props.title && (
           <Heading
-            type="h2"
+            type="h1"
             color={props.textColor}
             fontSize={props.fontSize}
             bold={false}

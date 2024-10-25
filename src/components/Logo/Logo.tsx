@@ -9,7 +9,7 @@ export default function Logo() {
 
   return (
     <img
-      src="/images/logo_white.png"
+      src="/images/logo/logo_white.png"
       className={LogoStyle({ media: breakpoint === 'mobile' ? 'mobile' : 'desktop' })}
     ></img>
   );
