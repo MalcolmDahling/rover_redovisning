@@ -8,7 +8,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <RecoilRoot>
       <html lang="en">
         <head>
-          <title>ROVÉR REDOVISNING</title>
+          <title>Rovér Redovisning</title>
           <link
             rel="icon"
             type="image/png"
