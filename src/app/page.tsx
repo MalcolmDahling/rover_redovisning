@@ -7,13 +7,13 @@ import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
 
 export default async function Index() {
-  const res = await fetch(`${process.env.URL}/api/storyblok`, { next: { revalidate: 1 } });
+  const res = await fetch(`${process.env.URL}/api/storyblok`);
   const data = await res.json();
-  console.log(data);
+  console.log(data.menu[0].content);
 
   return (
     <Wrapper>
-      {'Data Menu: ' + data.menu[0].name}
+      {'Data Menu: ' + data.menu[0].content.Text}
       <Header></Header>
       <Main>
         <Slider></Slider>
