@@ -10,12 +10,6 @@ export const FooterStyle = recipe({
   },
 });
 
-export const FooterLineStyle = recipe({
-  base: {
-    borderTop: `2px solid ${Colors.darkGray}`,
-  },
-});
-
 export const FooterGridContainerStyle = recipe({
   base: {
     margin: 'auto',
@@ -24,7 +18,7 @@ export const FooterGridContainerStyle = recipe({
     paddingTop: 20,
     paddingBottom: 20,
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr 1fr',
+    gridTemplateColumns: '1fr 1fr 1fr',
     gap: 15,
 
     '@media': {
@@ -59,5 +53,13 @@ export const FooterItemStyle = recipe({
         // borderLeft: `2px solid ${Colors.white}`,
       },
     },
+  },
+});
+
+export const FooterTaxContainerStyle = recipe({
+  base: {
+    margin: 'auto',
+    maxWidth: 1200,
+    padding: 10,
   },
 });

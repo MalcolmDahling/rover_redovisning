@@ -1,6 +1,6 @@
 import useBreakpoint from 'use-breakpoint';
 import Paragraph from '../Paragraph/Paragraph';
-import { FooterGridContainerStyle, FooterItemStyle, FooterLineStyle, FooterStyle } from './Footer.css';
+import { FooterGridContainerStyle, FooterItemStyle, FooterStyle, FooterTaxContainerStyle } from './Footer.css';
 import { Breakpoints } from '@/styles/variables';
 import Heading from '../Heading/Heading';
 import Socials from './Socials/Socials';
@@ -8,7 +8,7 @@ import Socials from './Socials/Socials';
 export default function Footer() {
   const { breakpoint } = useBreakpoint(Breakpoints);
 
-  const headings = ['ADRESS', 'KONTAKT', 'Godkänd för F-skatt'];
+  const headings = ['ADRESS', 'KONTAKT'];
 
   const text = [
     `Rovér Redovisning i Nacka
@@ -17,14 +17,10 @@ export default function Footer() {
 
     `070-493 16 76
     pr@roverredovisning.se`,
-
-    `Företaget har en policy kring personuppgifter/GPDR och personuppgiftbiträdesavtal med sina kunder.
-    Kontakta oss för mer information kring hur vi hanterar personuppgifter.`,
   ];
 
   return (
     <footer className={FooterStyle()}>
-      <div className={FooterLineStyle()}></div>
       <div className={FooterGridContainerStyle()}>
         {text.map((item, i) => (
           <div
@@ -49,6 +45,17 @@ export default function Footer() {
           </div>
         ))}
         <Socials></Socials>
+      </div>
+
+      <div className={FooterTaxContainerStyle()}>
+        <Paragraph
+          color="white"
+          fontSize="xs"
+        >
+          Godkänd för F-skatt.
+          <br />
+          Företaget har en policy kring personuppgifter/GPDR och personuppgiftbiträdesavtal med sina kunder. Kontakta oss för mer information kring hur vi hanterar personuppgifter
+        </Paragraph>
       </div>
     </footer>
   );

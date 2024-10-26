@@ -7,7 +7,8 @@ type props = {
   bold?: boolean;
   italic?: boolean;
   textShadow?: boolean;
-  fontSize: 'small' | 'medium' | 'large';
+  fontSize: 'xs' | 'small' | 'medium' | 'large';
+  noMargin?: boolean;
 };
 
 export default function Paragraph(props: props) {
@@ -32,6 +33,7 @@ export default function Paragraph(props: props) {
         italic: props.italic,
         textShadow: props.textShadow,
         fontSize: props.fontSize,
+        noMargin: props.noMargin,
       })}
     >
       {renderChildren()}

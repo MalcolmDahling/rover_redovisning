@@ -32,12 +32,20 @@ export const ParagraphStyle = recipe({
       },
     },
     fontSize: {
+      xs: {
+        fontSize: FontSize.xs,
+      },
       small: {
         fontSize: FontSize.small,
       },
       medium: { fontSize: FontSize.medium },
       large: {
         fontSize: FontSize.large,
+      },
+    },
+    noMargin: {
+      true: {
+        margin: 0,
       },
     },
   },
