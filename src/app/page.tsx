@@ -9,7 +9,7 @@ import Wrapper from '@/components/Wrapper/Wrapper';
 export default async function Index() {
   console.log('Vercel URL:', process.env.VERCEL_URL);
   const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/storyblok`);
+  const res = await fetch(`https://rover-r2.vercel.app/api/storyblok`);
   const data = await res.json();
   console.log(data);
 

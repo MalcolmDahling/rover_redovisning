@@ -18,14 +18,10 @@ export async function GET() {
       storyblok.get('cdn/stories', { starts_with: 'sidfot' }),
     ]);
 
-    const menuJSON = await menu.data.json();
-    const slidesJSON = await slides.data.json();
-    const footerJSON = await footer.data.json();
-
     const stories = {
-      menu: menuJSON.stories,
-      slides: slidesJSON.stories,
-      footer: footerJSON.stories,
+      menu: menu.data.stories,
+      slides: slides.data.stories,
+      footer: footer.data.stories,
     };
 
     return new NextResponse(JSON.stringify(stories), {
