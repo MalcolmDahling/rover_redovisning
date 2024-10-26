@@ -18,12 +18,13 @@ export const FooterGridContainerStyle = recipe({
     paddingTop: 20,
     paddingBottom: 20,
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 1fr',
+    gridTemplateColumns: 'repeat(3, 250px)',
     gap: 15,
+    justifyContent: 'space-between',
 
     '@media': {
       [MediaBreakpoints.tablet]: {
-        gridTemplateColumns: '1fr 1fr',
+        gap: 10,
       },
       [MediaBreakpoints.mobile]: {
         gridTemplateColumns: '1fr',
@@ -34,8 +35,6 @@ export const FooterGridContainerStyle = recipe({
 
 export const FooterItemStyle = recipe({
   base: {
-    flexBasis: '33%',
-
     display: 'flex',
     flexDirection: 'column',
     gap: 10,
@@ -43,14 +42,6 @@ export const FooterItemStyle = recipe({
     '@media': {
       [MediaBreakpoints.mobile]: {
         display: 'block',
-      },
-    },
-  },
-
-  variants: {
-    borderLeft: {
-      true: {
-        // borderLeft: `2px solid ${Colors.white}`,
       },
     },
   },

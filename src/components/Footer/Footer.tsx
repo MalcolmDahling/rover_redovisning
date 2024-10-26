@@ -25,7 +25,7 @@ export default function Footer() {
         {text.map((item, i) => (
           <div
             key={i}
-            className={FooterItemStyle({ borderLeft: i !== 0 && breakpoint !== 'mobile' })}
+            className={FooterItemStyle()}
           >
             <Heading
               type="h3"
