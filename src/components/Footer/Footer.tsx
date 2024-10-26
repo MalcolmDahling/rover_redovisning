@@ -1,3 +1,5 @@
+'use client';
+
 import useBreakpoint from 'use-breakpoint';
 import Paragraph from '../Paragraph/Paragraph';
 import { FooterGridContainerStyle, FooterItemStyle, FooterStyle, FooterTaxContainerStyle } from './Footer.css';

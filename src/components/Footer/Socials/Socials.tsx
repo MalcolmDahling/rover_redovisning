@@ -28,7 +28,10 @@ export default function Socials() {
         BESÖK OSS PÅ
       </Heading>
       {socials.map((item) => (
-        <SocialsItem {...item}></SocialsItem>
+        <SocialsItem
+          key={item.name}
+          {...item}
+        ></SocialsItem>
       ))}
     </div>
   );

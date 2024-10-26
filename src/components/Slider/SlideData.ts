@@ -1,3 +1,5 @@
+import { BackgroundImageBlur } from '@/styles/variables';
+
 type data = {
   title: string;
   text: string;
@@ -26,7 +28,7 @@ export const data: data[] = [
     backgroundImageURL: '/images/slides/0.jpg',
     textColor: 'white',
     backgroundColor: '',
-    backgroundImageBlur: 12,
+    backgroundImageBlur: BackgroundImageBlur.lots,
     fontSize: 'small',
   },
   {
@@ -42,7 +44,7 @@ export const data: data[] = [
     backgroundImageURL: '/images/slides/1.jpg',
     textColor: 'white',
     backgroundColor: '#063970',
-    backgroundImageBlur: 12,
+    backgroundImageBlur: BackgroundImageBlur.lots,
     fontSize: 'small',
   },
   {
@@ -58,7 +60,7 @@ export const data: data[] = [
     backgroundImageURL: '/images/slides/2.png',
     textColor: 'white',
     backgroundColor: '#063970',
-    backgroundImageBlur: 6,
+    backgroundImageBlur: BackgroundImageBlur.little,
     fontSize: 'small',
   },
   {
@@ -75,12 +77,12 @@ export const data: data[] = [
           ”Rovér Redovisning hjälpte mig att starta mitt aktiebolag och har fortsatt sköta bokföring, löner och skatteverkets rutiner sedan dess. Paulin lyssnar, guidar och åtgärdar så jag kan driva mitt företag på ett enkelt sätt”.
           -David Ohlén, Narkosläkare, konsult. Ägare av Morphysio AB.
 
-          (Inväntar en till referens) `,
+          (Inväntar en till referens)`,
     imageURL: '',
     backgroundImageURL: '/images/slides/3.jpg',
     textColor: 'white',
     backgroundColor: 'black',
-    backgroundImageBlur: 12,
+    backgroundImageBlur: BackgroundImageBlur.lots,
     fontSize: 'small',
   },
   {
@@ -105,7 +107,7 @@ export const data: data[] = [
     backgroundImageURL: '/images/slides/4.jpg',
     textColor: 'white',
     backgroundColor: '#1e81b0',
-    backgroundImageBlur: 12,
+    backgroundImageBlur: BackgroundImageBlur.lots,
     fontSize: 'small',
   },
 ];

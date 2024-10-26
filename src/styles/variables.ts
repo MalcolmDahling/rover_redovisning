@@ -26,3 +26,9 @@ export const FontSize = {
   medium: 26,
   large: 32,
 };
+
+export const BackgroundImageBlur = {
+  little: 6,
+  medium: 8,
+  lots: 12,
+};

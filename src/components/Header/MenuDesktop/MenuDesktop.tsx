@@ -9,8 +9,6 @@ export default function MenuDesktop() {
   const [moveToSlideAtom, setMoveToSlideAtom] = useRecoilState(MoveToSlideAtom);
 
   function handleClick(index: number) {
-    console.log('click', index);
-
     setMoveToSlideAtom({ index: index, date: Date.now() });
   }
 

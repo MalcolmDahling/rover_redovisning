@@ -28,7 +28,6 @@ export default function Slider() {
   });
 
   useEffect(() => {
-    console.log('slider', moveToSlideAtom);
     if (!slider.current) return;
 
     slider.current?.moveToIdx(moveToSlideAtom.index, true);
