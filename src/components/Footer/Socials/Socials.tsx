@@ -4,7 +4,7 @@ import SocialsItem from './SocialsItem/SocialsItem';
 export default function Socials() {
   const socials = [
     {
-      name: 'Rovér Redovisning ',
+      name: 'Rovér Redovisning',
       url: 'https://www.facebook.com/roverredovisning.se',
       imageUrl: '/images/socials/facebook.webp',
     },

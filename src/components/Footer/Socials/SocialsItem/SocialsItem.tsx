@@ -1,5 +1,5 @@
 import Paragraph from '@/components/Paragraph/Paragraph';
-import { SocialsItemContainerStyle, SocialsItemImageStyle } from './SocialsItem.css';
+import { SocialsItemLinkStyle, SocialsItemImageStyle } from './SocialsItem.css';
 
 type props = {
   name: string;
@@ -10,7 +10,7 @@ type props = {
 export default function SocialsItem(props: props) {
   return (
     <a
-      className={SocialsItemContainerStyle()}
+      className={SocialsItemLinkStyle()}
       href={props.url}
       target="_blank"
     >
