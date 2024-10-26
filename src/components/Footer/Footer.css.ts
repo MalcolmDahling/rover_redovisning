@@ -24,10 +24,13 @@ export const FooterGridContainerStyle = recipe({
     paddingTop: 20,
     paddingBottom: 20,
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr 2fr',
+    gridTemplateColumns: '1fr 1fr 1fr 1fr',
     gap: 15,
 
     '@media': {
+      [MediaBreakpoints.tablet]: {
+        gridTemplateColumns: '1fr 1fr',
+      },
       [MediaBreakpoints.mobile]: {
         gridTemplateColumns: '1fr',
       },

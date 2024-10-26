@@ -3,32 +3,21 @@ import { recipe } from '@vanilla-extract/recipes';
 
 export const SocialsItemLinkStyle = recipe({
   base: {
-    width: 246,
-    height: 68,
-    padding: 10,
-
+    width: 'fit-content',
     display: 'flex',
     alignItems: 'center',
     gap: 10,
 
-    boxSizing: 'border-box',
-    backgroundColor: Colors.white,
-    borderRadius: 15,
-    border: '2px solid transparent',
-    userSelect: 'none',
-    cursor: 'pointer',
-    transition: 'all 250ms',
-    boxShadow: `4px 4px 4px rgba(0,0,0,0.25)`,
-    textDecorationColor: Colors.black,
+    color: 'transparent',
 
     ':hover': {
-      border: `2px solid ${Colors.black}`,
+      color: Colors.white,
     },
   },
 });
 
 export const SocialsItemImageStyle = recipe({
   base: {
-    width: 48,
+    width: 36,
   },
 });

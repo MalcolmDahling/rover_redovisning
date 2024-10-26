@@ -48,9 +48,8 @@ export default function Footer() {
             </Paragraph>
           </div>
         ))}
+        <Socials></Socials>
       </div>
-
-      <Socials></Socials>
     </footer>
   );
 }

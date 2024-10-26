@@ -19,7 +19,7 @@ export default function SocialsItem(props: props) {
         className={SocialsItemImageStyle()}
       ></img>
       <Paragraph
-        color="black"
+        color="white"
         fontSize="small"
       >
         {props.name}
