@@ -18,11 +18,7 @@ export async function GET() {
       storyblok.get('cdn/stories', { starts_with: 'sidfot' }),
     ]);
 
-    const stories = {
-      menu: menu.data.stories,
-      slides: slides.data.stories,
-      footer: footer.data.stories,
-    };
+    const stories = [menu.data.stories, slides.data.stories, footer.data.stories];
 
     return new NextResponse(JSON.stringify(stories), {
       status: 200,
