@@ -1,5 +1,3 @@
-'use server';
-
 import Footer from '@/components/Footer/Footer';
 import Hamburger from '@/components/Header/Hamburger/Hamburger';
 import Header from '@/components/Header/Header';
@@ -9,7 +7,7 @@ import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
 
 export default async function Index() {
-  const res = await fetch(`${process.env.URL}/api/storyblok`, { next: { revalidate: 30 } });
+  const res = await fetch(`${process.env.URL}/api/storyblok`);
   const data = await res.json();
   console.log(data.menu[0].content);
 
