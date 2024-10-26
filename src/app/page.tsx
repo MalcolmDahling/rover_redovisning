@@ -24,5 +24,3 @@ export default async function Index() {
     </Wrapper>
   );
 }
-
-export const revalidate = 60;
