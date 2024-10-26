@@ -7,7 +7,7 @@ import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
 
 export default async function Index() {
-  const res = await fetch(`${process.env.URL}/api/storyblok`);
+  const res = await fetch(`${process.env.URL}/api/storyblok`, { next: { revalidate: 1 } });
   const data = await res.json();
   console.log(data);
 
@@ -24,5 +24,3 @@ export default async function Index() {
     </Wrapper>
   );
 }
-
-export const revalidate = 30;
