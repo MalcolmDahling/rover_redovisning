@@ -1,3 +1,5 @@
+'use server';
+
 import Footer from '@/components/Footer/Footer';
 import Hamburger from '@/components/Header/Hamburger/Hamburger';
 import Header from '@/components/Header/Header';
