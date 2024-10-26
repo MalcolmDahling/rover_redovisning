@@ -7,7 +7,7 @@ import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
 
 export default async function Index() {
-  const res = await fetch(`${process.env.INTERNAL_API_URL}/storyblok`);
+  const res = await fetch(`${process.env.URL}/api/storyblok`);
   const data = await res.json();
   console.log(data);
 
