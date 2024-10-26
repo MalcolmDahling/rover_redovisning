@@ -4,6 +4,7 @@ import { recipe } from '@vanilla-extract/recipes';
 export const FooterStyle = recipe({
   base: {
     width: '100%',
+    paddingBottom: 20,
 
     backgroundColor: Colors.green,
   },

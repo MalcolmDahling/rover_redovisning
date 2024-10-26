@@ -21,6 +21,7 @@ export default function Footer() {
     `Företaget har en policy kring personuppgifter/GPDR och personuppgiftbiträdesavtal med sina kunder.
     Kontakta oss för mer information kring hur vi hanterar personuppgifter.`,
   ];
+
   return (
     <footer className={FooterStyle()}>
       <div className={FooterLineStyle()}></div>
