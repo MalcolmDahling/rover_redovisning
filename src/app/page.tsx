@@ -22,6 +22,8 @@ export default async function Index() {
       <Hamburger></Hamburger>
 
       <Footer></Footer>
+
+      {data}
     </Wrapper>
   );
 }
