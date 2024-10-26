@@ -5,7 +5,7 @@ type data = {
   backgroundImageURL: string;
   textColor: 'black' | 'white';
   backgroundColor: string;
-  blurBackgroundImage: boolean;
+  backgroundImageBlur: number;
   fontSize: 'small' | 'medium' | 'large';
 };
 
@@ -23,14 +23,14 @@ export const data: data[] = [
       
       Vi befinner oss i Nacka, men vi jobbar digitalt och har kunder i hela landet.`,
     imageURL: '',
-    backgroundImageURL: '/images/background.jpg',
+    backgroundImageURL: '/images/slides/0.jpg',
     textColor: 'white',
     backgroundColor: '',
-    blurBackgroundImage: true,
+    backgroundImageBlur: 12,
     fontSize: 'small',
   },
   {
-    title: 'VÅRA TJÄNSTER/FÖRETAGET',
+    title: 'FÖRETAGET',
     text: `Texten är inte klar för denna sida, men här ska det stå vad företaget erbjuder, priser mm: 
           
           Bla bla bla. Vi har bla bla bla.
@@ -39,10 +39,26 @@ export const data: data[] = [
                 
           Bla bla bla.`,
     imageURL: '',
-    backgroundImageURL: '/images/2.jpg',
+    backgroundImageURL: '/images/slides/1.jpg',
     textColor: 'white',
     backgroundColor: '#063970',
-    blurBackgroundImage: true,
+    backgroundImageBlur: 12,
+    fontSize: 'small',
+  },
+  {
+    title: 'VÅRA TJÄNSTER',
+    text: `Texten är inte klar för denna sida, men här ska det stå vad företaget erbjuder, priser mm: 
+          
+          Bla bla bla. Vi har bla bla bla.
+                
+          Olika tjänster & priser: 
+                
+          Bla bla bla.`,
+    imageURL: '',
+    backgroundImageURL: '/images/slides/2.png',
+    textColor: 'white',
+    backgroundColor: '#063970',
+    backgroundImageBlur: 6,
     fontSize: 'small',
   },
   {
@@ -61,10 +77,10 @@ export const data: data[] = [
 
           (Inväntar en till referens) `,
     imageURL: '',
-    backgroundImageURL: '/images/3.jpg',
+    backgroundImageURL: '/images/slides/3.jpg',
     textColor: 'white',
     backgroundColor: 'black',
-    blurBackgroundImage: true,
+    backgroundImageBlur: 12,
     fontSize: 'small',
   },
   {
@@ -86,10 +102,10 @@ export const data: data[] = [
           
           MAILFORMULÄR HÄR?`,
     imageURL: '',
-    backgroundImageURL: '/images/5.jpg',
+    backgroundImageURL: '/images/slides/4.jpg',
     textColor: 'white',
     backgroundColor: '#1e81b0',
-    blurBackgroundImage: true,
+    backgroundImageBlur: 12,
     fontSize: 'small',
   },
 ];

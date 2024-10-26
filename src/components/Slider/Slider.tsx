@@ -23,7 +23,7 @@ export default function Slider() {
     slideChanged(s) {
       const index = s.track.details.rel;
 
-      setMenuAtom(index === 0 ? 'home' : index === 1 ? 'company' : index === 2 ? 'references' : 'contact');
+      setMenuAtom(index === 0 ? 'home' : index === 1 ? 'company' : index === 2 ? 'services' : index === 3 ? 'references' : 'contact');
     },
   });
 

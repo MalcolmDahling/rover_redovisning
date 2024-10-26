@@ -61,14 +61,6 @@ export const SlideBackgroundImageStyle = recipe({
     minWidth: 1920,
     zIndex: -1,
   },
-
-  variants: {
-    blurBackgroundImage: {
-      true: {
-        filter: 'blur(12px)',
-      },
-    },
-  },
 });
 
 export const SlideTextContainerStyle = recipe({

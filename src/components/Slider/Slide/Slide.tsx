@@ -8,7 +8,7 @@ type props = {
   backgroundImageURL: string;
   textColor: 'black' | 'white';
   backgroundColor: string;
-  blurBackgroundImage: boolean;
+  backgroundImageBlur: number;
   fontSize: 'small' | 'medium' | 'large';
 };
 
@@ -18,7 +18,8 @@ export default function Slide(props: props) {
       {props.backgroundImageURL && (
         <img
           src={props.backgroundImageURL}
-          className={SlideBackgroundImageStyle({ blurBackgroundImage: props.blurBackgroundImage })}
+          className={SlideBackgroundImageStyle()}
+          style={{ filter: `blur(${props.backgroundImageBlur}px)` }}
         ></img>
       )}
 

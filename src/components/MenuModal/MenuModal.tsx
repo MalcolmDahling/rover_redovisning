@@ -33,16 +33,20 @@ export default function MenuModal() {
         onClick={() => handleClick(0)}
       ></MenuModalItem>
       <MenuModalItem
-        text="• VÅRA TJÄNSTER/FÖRETAGET"
+        text="• FÖRETAGET"
         onClick={() => handleClick(1)}
       ></MenuModalItem>
       <MenuModalItem
-        text="• REFERENSER"
+        text="• VÅRA TJÄNSTER"
         onClick={() => handleClick(2)}
       ></MenuModalItem>
       <MenuModalItem
-        text="• KONTAKT"
+        text="• REFERENSER"
         onClick={() => handleClick(3)}
+      ></MenuModalItem>
+      <MenuModalItem
+        text="• KONTAKT"
+        onClick={() => handleClick(4)}
       ></MenuModalItem>
     </div>
   );

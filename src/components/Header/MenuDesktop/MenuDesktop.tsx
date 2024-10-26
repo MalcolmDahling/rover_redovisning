@@ -25,21 +25,27 @@ export default function MenuDesktop() {
       ></MenuDesktopButton>
 
       <MenuDesktopButton
-        text="VÅRA TJÄNSTER/FÖRETAGET"
+        text="FÖRETAGET"
         selected={menuAtom === 'company'}
         onClick={() => handleClick(1)}
       ></MenuDesktopButton>
 
       <MenuDesktopButton
+        text="VÅRA TJÄNSTER"
+        selected={menuAtom === 'services'}
+        onClick={() => handleClick(2)}
+      ></MenuDesktopButton>
+
+      <MenuDesktopButton
         text="REFERENSER"
         selected={menuAtom === 'references'}
-        onClick={() => handleClick(2)}
+        onClick={() => handleClick(3)}
       ></MenuDesktopButton>
 
       <MenuDesktopButton
         text="KONTAKT"
         selected={menuAtom === 'contact'}
-        onClick={() => handleClick(3)}
+        onClick={() => handleClick(4)}
       ></MenuDesktopButton>
     </div>
   );
