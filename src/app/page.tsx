@@ -13,17 +13,14 @@ export default async function Index() {
 
   return (
     <Wrapper>
+      {'Data Menu: ' + data.menu[0].name}
       <Header></Header>
       <Main>
         <Slider></Slider>
       </Main>
-
       <MenuModal></MenuModal>
       <Hamburger></Hamburger>
-
       <Footer></Footer>
-
-      {data}
     </Wrapper>
   );
 }
