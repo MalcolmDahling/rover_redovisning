@@ -7,11 +7,7 @@ import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
 
 export default async function Index() {
-  console.log('Vercel URL:', process.env.NEXT_PUBLIC_VERCEL_ENV);
-  const baseUrl = process.env.NEXT_PUBLIC_VERCEL_ENV ? `https://${process.env.NEXT_PUBLIC_VERCEL_ENV}` : 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/api/storyblok`);
-  const data = await res.json();
-  console.log(data);
+  console.log('Vercel URL:', process.env.VERCEL_URL);
 
   return (
     <Wrapper>
