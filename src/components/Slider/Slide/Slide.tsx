@@ -30,6 +30,7 @@ export default function Slide(props: props) {
             color={props.textColor}
             fontSize={props.fontSize}
             bold={false}
+            textShadow={true}
           >
             {props.title}
           </Heading>
@@ -41,6 +42,7 @@ export default function Slide(props: props) {
               <Paragraph
                 fontSize={props.fontSize}
                 color={props.textColor}
+                textShadow={true}
               >
                 {props.text}
               </Paragraph>

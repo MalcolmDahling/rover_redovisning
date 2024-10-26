@@ -28,7 +28,7 @@ export const ParagraphStyle = recipe({
     },
     textShadow: {
       true: {
-        textShadow: '2px 2px black',
+        textShadow: '2px 2px rgba(0,0,0,0.75)',
       },
     },
     fontSize: {

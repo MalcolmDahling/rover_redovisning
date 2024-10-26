@@ -62,6 +62,11 @@ export const HeadingStyle = recipe({
         cursor: 'pointer',
       },
     },
+    textShadow: {
+      true: {
+        textShadow: '2px 2px rgba(0,0,0,0.75)',
+      },
+    },
   },
 });
 

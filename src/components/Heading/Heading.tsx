@@ -12,6 +12,7 @@ type props = {
   margin?: boolean;
   onClick?: () => void;
   cursorPointer?: boolean;
+  textShadow?: boolean;
 };
 
 export default function Heading(props: props) {
@@ -19,7 +20,7 @@ export default function Heading(props: props) {
 
   return (
     <Component
-      className={HeadingStyle({ type: props.type, color: props.color, fontSize: props.fontSize, bold: props.bold, margin: props.margin, cursorPointer: props.cursorPointer })}
+      className={HeadingStyle({ type: props.type, color: props.color, fontSize: props.fontSize, bold: props.bold, margin: props.margin, cursorPointer: props.cursorPointer, textShadow: props.textShadow })}
       onClick={props.onClick}
     >
       {props.children}
