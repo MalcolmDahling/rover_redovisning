@@ -11,17 +11,12 @@ export async function GET() {
   });
 
   try {
-    const menu = await storyblok.get('cdn/stories', {
-      starts_with: 'meny',
-    });
-
-    const slides = await storyblok.get('cdn/stories', {
-      starts_with: 'slides',
-    });
-
-    const footer = await storyblok.get('cdn/stories', {
-      starts_with: 'sidfot',
-    });
+    /*prettier-ignore*/
+    const [menu, slides, footer] = await Promise.all([
+      storyblok.get('cdn/stories', { starts_with: 'meny' }),
+      storyblok.get('cdn/stories', { starts_with: 'slides' }),
+      storyblok.get('cdn/stories', { starts_with: 'sidfot' }),
+    ]);
 
     const stories = {
       menu: menu.data.stories,
