@@ -25,6 +25,10 @@ export default async function Index() {
       </Main>
       <MenuModal slides={data.slides}></MenuModal>
       <Hamburger></Hamburger>
+      <Footer
+        footer={data.footer}
+        contact_information={data.contact_information}
+      ></Footer>
     </Wrapper>
   );
 }
