@@ -9,6 +9,7 @@ export const SocialsItemLinkStyle = recipe({
     gap: 10,
 
     color: 'transparent',
+    transition: 'all 250ms',
 
     ':hover': {
       color: Colors.white,
