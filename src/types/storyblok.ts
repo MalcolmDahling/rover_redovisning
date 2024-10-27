@@ -26,7 +26,7 @@ type Footer = {
   }[];
   component: string;
   bottom_text: string;
-  adress_title: string;
+  address_title: string;
   contact_title: string;
   visit_us_title: string;
 };
