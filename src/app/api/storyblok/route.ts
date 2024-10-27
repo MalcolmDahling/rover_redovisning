@@ -22,6 +22,8 @@ export async function GET() {
       storyblok.get('cdn/stories', { starts_with: 'website-name' }),
     ]);
 
+    console.log(footer.data.stories[0].content.address_title);
+
     const arr: any[] = [];
 
     slides.data.stories.forEach((item: any) => {

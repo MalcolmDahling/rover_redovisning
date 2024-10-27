@@ -16,7 +16,7 @@ export default function Footer(props: { footer: StoryblokType['footer']; contact
             fontSize="small"
             margin={false}
           >
-            {props.footer?.address_title && props.footer.address_title ? props.footer.address_title : 'asdf'}
+            {props.footer.address_title}
           </Heading>
 
           <address className={FooterAddressStyle()}>
