@@ -5,8 +5,6 @@ import Socials from './Socials/Socials';
 import { StoryblokType } from '@/types/storyblok';
 
 export default function Footer(props: { footer: StoryblokType['footer']; contact_information: StoryblokType['contact_information'] }) {
-  console.log(props.footer.address_title);
-
   return (
     <footer className={FooterStyle()}>
       <div className={FooterGridContainerStyle()}>
@@ -18,7 +16,7 @@ export default function Footer(props: { footer: StoryblokType['footer']; contact
             fontSize="small"
             margin={false}
           >
-            {props.footer.address_title}
+            {props.footer?.address_title && props.footer.address_title ? props.footer.address_title : 'asdf'}
           </Heading>
 
           <address className={FooterAddressStyle()}>
