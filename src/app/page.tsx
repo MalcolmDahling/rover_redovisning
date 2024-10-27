@@ -19,6 +19,7 @@ export default async function Index() {
       <Header
         website_name={data.website_name}
         slides={data.slides}
+        logo={data.logo}
       ></Header>
       <Main>
         <Slider slides={data.slides}></Slider>

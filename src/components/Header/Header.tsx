@@ -10,7 +10,7 @@ import { useRecoilState } from 'recoil';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
 import { StoryblokType } from '@/types/storyblok';
 
-export default function Header(props: { website_name: StoryblokType['website_name']; slides: StoryblokType['slides'] }) {
+export default function Header(props: { website_name: StoryblokType['website_name']; slides: StoryblokType['slides']; logo: StoryblokType['logo'] }) {
   const [moveToSlideAtom, setMoveToSlideAtom] = useRecoilState(MoveToSlideAtom);
   const { breakpoint } = useBreakpoint(Breakpoints);
 
@@ -32,7 +32,7 @@ export default function Header(props: { website_name: StoryblokType['website_nam
           onClick={() => setMoveToSlideAtom({ index: 0, date: Date.now() })}
           cursorPointer={true}
         >
-          <Logo></Logo>
+          <Logo logo={props.logo}></Logo>
         </Heading>
         {breakpoint === 'desktop' && <MenuDesktop slides={props.slides}></MenuDesktop>}
       </div>
