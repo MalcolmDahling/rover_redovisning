@@ -15,34 +15,42 @@ export async function GET() {
   try {
     /*prettier-ignore*/
     const [contact_information, footer, logo, slides, website_name] = await Promise.all([
-      storyblok.get('cdn/stories', {starts_with: 'contact-information'}),
+      storyblok.get('cdn/stories', { starts_with: 'contact-information' }),
       storyblok.get('cdn/stories', { starts_with: 'footer' }),
       storyblok.get('cdn/stories', { starts_with: 'logo' }),
       storyblok.get('cdn/stories', { starts_with: 'slides' }),
       storyblok.get('cdn/stories', { starts_with: 'website-name' }),
     ]);
 
+    const arr: any[] = [];
+
+    slides.data.stories.forEach((item: any) => {
+      arr.push({
+        ...item.content,
+        background_image: item.content.background_image.filename,
+        image: item.content.image.filename,
+        order: parseInt(item.content.order),
+      });
+    });
+
+    arr.sort((a, b) => a.order - b.order);
+
     const stories = {
       contact_information: contact_information.data.stories[0].content,
 
-      visit_us: footer.data.stories[0].content.visit_us.map((item: any) => {
-        return {
-          link: item.link,
-          name: item.name,
-          image: item.image.filename,
-        };
-      }),
+      footer: {
+        ...footer.data.stories[0].content,
+        visit_us: footer.data.stories[0].content.visit_us.map((item: any) => {
+          return {
+            link: item.link,
+            name: item.name,
+            image: item.image.filename,
+          };
+        }),
+      },
 
       logo: logo.data.stories[0].content,
-
-      slides: slides.data.stories.map((item: any) => {
-        return {
-          ...item.content,
-          background_image: item.content.background_image.filename,
-          image: item.content.image.filename,
-        };
-      }),
-
+      slides: arr,
       website_name: website_name.data.stories[0].content,
     };
 

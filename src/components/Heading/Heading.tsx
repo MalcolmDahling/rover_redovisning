@@ -4,7 +4,6 @@ import { HeadingMultiLineStyle, HeadingStyle } from './Heading.css';
 type props = {
   type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   text?: string;
-  text2?: string;
   color: 'black' | 'white';
   children: React.ReactNode;
   fontSize: 'small' | 'medium' | 'large';
@@ -13,10 +12,22 @@ type props = {
   onClick?: () => void;
   cursorPointer?: boolean;
   textShadow?: boolean;
+  upperCase?: boolean;
+  multiLine?: boolean;
 };
 
 export default function Heading(props: props) {
   const Component = props.type;
+  let text = props.text;
+  let multiLinetext: string[] = [];
+
+  if (props.upperCase && text) {
+    text = text.toUpperCase();
+  }
+
+  if (props.multiLine && text) {
+    multiLinetext = text.split(' ');
+  }
 
   return (
     <Component
@@ -24,10 +35,15 @@ export default function Heading(props: props) {
       onClick={props.onClick}
     >
       {props.children}
-      <div className={HeadingMultiLineStyle()}>
-        <span>{props.text}</span>
-        {props.text2 && <span>{props.text2}</span>}
-      </div>
+      {multiLinetext.length > 0 ? (
+        <div className={HeadingMultiLineStyle()}>
+          {multiLinetext.map((item) => (
+            <span key={Date.now() + item}>{item}</span>
+          ))}
+        </div>
+      ) : (
+        props.text
+      )}
     </Component>
   );
 }

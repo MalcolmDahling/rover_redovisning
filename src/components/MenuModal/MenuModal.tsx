@@ -8,8 +8,9 @@ import useBreakpoint from 'use-breakpoint';
 import { Breakpoints } from '@/styles/variables';
 import { useEffect } from 'react';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
+import { StoryblokType } from '@/types/storyblok';
 
-export default function MenuModal() {
+export default function MenuModal(props: { slides: StoryblokType['slides'] }) {
   const [menuModalToggleAtom, setMenuModalToggleAtom] = useRecoilState(MenuModalToggleAtom);
   const [moveToSlideAtom, setMoveToSlideAtom] = useRecoilState(MoveToSlideAtom);
 
@@ -28,26 +29,13 @@ export default function MenuModal() {
 
   return (
     <div className={MenuModalContainerStyle({ show: menuModalToggleAtom })}>
-      <MenuModalItem
-        text="• HEM"
-        onClick={() => handleClick(0)}
-      ></MenuModalItem>
-      <MenuModalItem
-        text="• FÖRETAGET"
-        onClick={() => handleClick(1)}
-      ></MenuModalItem>
-      <MenuModalItem
-        text="• VÅRA TJÄNSTER"
-        onClick={() => handleClick(2)}
-      ></MenuModalItem>
-      <MenuModalItem
-        text="• REFERENSER"
-        onClick={() => handleClick(3)}
-      ></MenuModalItem>
-      <MenuModalItem
-        text="• KONTAKT"
-        onClick={() => handleClick(4)}
-      ></MenuModalItem>
+      {props.slides.map((item) => (
+        <MenuModalItem
+          key={item.menu_title}
+          text={`• ${item.menu_title}`}
+          onClick={() => handleClick(item.order)}
+        ></MenuModalItem>
+      ))}
     </div>
   );
 }

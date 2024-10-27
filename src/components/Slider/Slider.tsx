@@ -7,10 +7,10 @@ import { SliderStyle } from './Slider.css';
 import { useEffect } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { MenuAtom } from '@/atoms/MenuAtom';
-import { data } from './SlideData';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
+import { StoryblokType } from '@/types/storyblok';
 
-export default function Slider() {
+export default function Slider(props: { slides: StoryblokType['slides'] }) {
   const [menuAtom, setMenuAtom] = useRecoilState(MenuAtom);
   const moveToSlideAtom = useRecoilValue(MoveToSlideAtom);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
@@ -23,7 +23,11 @@ export default function Slider() {
     slideChanged(s) {
       const index = s.track.details.rel;
 
-      setMenuAtom(index === 0 ? 'home' : index === 1 ? 'company' : index === 2 ? 'services' : index === 3 ? 'references' : 'contact');
+      props.slides.forEach((item) => {
+        if (index === item.order) {
+          setMenuAtom(item.menu_title);
+        }
+      });
     },
   });
 
@@ -38,10 +42,10 @@ export default function Slider() {
       ref={sliderRef}
       className={`keen-slider ${SliderStyle()}`}
     >
-      {data.map((item, i) => (
+      {props.slides.map((item, i) => (
         <Slide
           key={i}
-          {...item}
+          slide={item}
         ></Slide>
       ))}
     </main>

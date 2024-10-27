@@ -3,7 +3,6 @@ import { recipe } from '@vanilla-extract/recipes';
 
 export const ParagraphStyle = recipe({
   base: {
-    fontSize: 26,
     margin: 0,
   },
 

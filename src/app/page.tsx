@@ -7,22 +7,28 @@ import Main from '@/components/Main/Main';
 import MenuModal from '@/components/MenuModal/MenuModal';
 import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
+import { StoryblokType } from '@/types/storyblok';
 
 export default async function Index() {
   const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api/storyblok' : `${process.env.URL}/api/storyblok`;
   const res = await fetch(url, { next: { revalidate: 60 } });
-  const data = await res.json();
-  console.log(data);
+  const data: StoryblokType = await res.json();
 
   return (
     <Wrapper>
-      <Header></Header>
+      <Header
+        website_name={data.website_name}
+        slides={data.slides}
+      ></Header>
       <Main>
-        <Slider></Slider>
+        <Slider slides={data.slides}></Slider>
       </Main>
-      <MenuModal></MenuModal>
+      <MenuModal slides={data.slides}></MenuModal>
       <Hamburger></Hamburger>
-      <Footer></Footer>
+      <Footer
+        footer={data.footer}
+        contact_information={data.contact_information}
+      ></Footer>
     </Wrapper>
   );
 }

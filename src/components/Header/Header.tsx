@@ -8,8 +8,9 @@ import { Breakpoints } from '@/styles/variables';
 import Logo from '../Logo/Logo';
 import { useRecoilState } from 'recoil';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
+import { StoryblokType } from '@/types/storyblok';
 
-export default function Header() {
+export default function Header(props: { website_name: StoryblokType['website_name']; slides: StoryblokType['slides'] }) {
   const [moveToSlideAtom, setMoveToSlideAtom] = useRecoilState(MoveToSlideAtom);
   const { breakpoint } = useBreakpoint(Breakpoints);
 
@@ -22,8 +23,9 @@ export default function Header() {
       <div className={HeaderContainerStyle()}>
         <Heading
           type="h2"
-          text="ROVÉR"
-          text2="REDOVISNING"
+          text={props.website_name.name}
+          upperCase={true}
+          multiLine={true}
           color="white"
           fontSize={breakpoint === 'mobile' ? 'medium' : 'large'}
           bold={true}
@@ -32,7 +34,7 @@ export default function Header() {
         >
           <Logo></Logo>
         </Heading>
-        {breakpoint === 'desktop' && <MenuDesktop></MenuDesktop>}
+        {breakpoint === 'desktop' && <MenuDesktop slides={props.slides}></MenuDesktop>}
       </div>
     </header>
   );

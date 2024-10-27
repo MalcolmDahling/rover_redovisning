@@ -1,21 +1,9 @@
 import Heading from '@/components/Heading/Heading';
 import { SocialsContainerStyle } from './Socials.css';
 import SocialsItem from './SocialsItem/SocialsItem';
+import { StoryblokType } from '@/types/storyblok';
 
-export default function Socials() {
-  const socials = [
-    {
-      name: 'Facebook',
-      url: 'https://www.facebook.com/roverredovisning.se',
-      imageUrl: '/images/socials/facebook.png',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/roverredovisning/',
-      imageUrl: '/images/socials/instagram.png',
-    },
-  ];
-
+export default function Socials(props: { visit_us_title: StoryblokType['footer']['visit_us_title']; visit_us_items: StoryblokType['footer']['visit_us'] }) {
   return (
     <div className={SocialsContainerStyle()}>
       <Heading
@@ -25,12 +13,12 @@ export default function Socials() {
         fontSize="small"
         margin={false}
       >
-        BESÖK OSS PÅ
+        {props.visit_us_title}
       </Heading>
-      {socials.map((item) => (
+      {props.visit_us_items.map((item) => (
         <SocialsItem
           key={item.name}
-          {...item}
+          visit_us_items={item}
         ></SocialsItem>
       ))}
     </div>

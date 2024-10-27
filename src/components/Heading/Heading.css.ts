@@ -33,6 +33,9 @@ export const HeadingStyle = recipe({
       },
     },
     fontSize: {
+      xs: {
+        fontSize: FontSize.xs,
+      },
       small: {
         fontSize: FontSize.small,
       },

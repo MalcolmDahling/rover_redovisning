@@ -1,57 +1,48 @@
 import Paragraph from '@/components/Paragraph/Paragraph';
 import { SlideBackgroundImageStyle, SlideContainerStyle, SlideFlexContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideTextContainerStyle } from './Slide.css';
 import Heading from '@/components/Heading/Heading';
-type props = {
-  title: string;
-  text: string;
-  imageURL: string;
-  backgroundImageURL: string;
-  textColor: 'black' | 'white';
-  backgroundColor: string;
-  backgroundImageBlur: number;
-  fontSize: 'small' | 'medium' | 'large';
-};
+import { StoryblokType } from '@/types/storyblok';
 
-export default function Slide(props: props) {
+export default function Slide(props: { slide: StoryblokType['slides'][number] }) {
   return (
     <div className={`keen-slider__slide ${SlideContainerStyle()}`}>
-      {props.backgroundImageURL && (
+      {props.slide.background_image && (
         <img
-          src={props.backgroundImageURL}
+          src={props.slide.background_image}
           className={SlideBackgroundImageStyle()}
-          style={{ filter: `blur(${props.backgroundImageBlur}px)` }}
+          style={{ filter: `blur(${props.slide.background_image_blur}px)` }}
         ></img>
       )}
 
       <div className={SlideInnerContainerStyle()}>
-        {props.title && (
+        {props.slide.title && (
           <Heading
             type="h1"
-            color={props.textColor}
-            fontSize={props.fontSize}
+            color={props.slide.text_color}
+            fontSize={props.slide.font_size_heading}
             bold={false}
             textShadow={true}
           >
-            {props.title}
+            {props.slide.title}
           </Heading>
         )}
 
         <div className={SlideFlexContainerStyle()}>
-          {props.text && (
+          {props.slide.text && (
             <div className={SlideTextContainerStyle()}>
               <Paragraph
-                fontSize={props.fontSize}
-                color={props.textColor}
+                fontSize={props.slide.font_size_text}
+                color={props.slide.text_color}
                 textShadow={true}
               >
-                {props.text}
+                {props.slide.text}
               </Paragraph>
             </div>
           )}
 
-          {props.imageURL && (
+          {props.slide.image && (
             <img
-              src={props.imageURL}
+              src={props.slide.image}
               className={SlideImageStyle()}
             ></img>
           )}

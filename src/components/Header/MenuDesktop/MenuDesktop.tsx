@@ -3,8 +3,9 @@ import { useRecoilState } from 'recoil';
 import { MenuDesktopContainerStyle } from './MenuDesktop.css';
 import MenuDesktopButton from './MenuDesktopButton/MenuDesktopButton';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
+import { StoryblokType } from '@/types/storyblok';
 
-export default function MenuDesktop() {
+export default function MenuDesktop(props: { slides: StoryblokType['slides'] }) {
   const [menuAtom, setMenuAtom] = useRecoilState(MenuAtom);
   const [moveToSlideAtom, setMoveToSlideAtom] = useRecoilState(MoveToSlideAtom);
 
@@ -14,37 +15,16 @@ export default function MenuDesktop() {
 
   return (
     <div className={MenuDesktopContainerStyle()}>
-      <MenuDesktopButton
-        text="HEM"
-        selected={menuAtom === 'home'}
-        onClick={() => {
-          handleClick(0);
-        }}
-      ></MenuDesktopButton>
-
-      <MenuDesktopButton
-        text="FÖRETAGET"
-        selected={menuAtom === 'company'}
-        onClick={() => handleClick(1)}
-      ></MenuDesktopButton>
-
-      <MenuDesktopButton
-        text="VÅRA TJÄNSTER"
-        selected={menuAtom === 'services'}
-        onClick={() => handleClick(2)}
-      ></MenuDesktopButton>
-
-      <MenuDesktopButton
-        text="REFERENSER"
-        selected={menuAtom === 'references'}
-        onClick={() => handleClick(3)}
-      ></MenuDesktopButton>
-
-      <MenuDesktopButton
-        text="KONTAKT"
-        selected={menuAtom === 'contact'}
-        onClick={() => handleClick(4)}
-      ></MenuDesktopButton>
+      {props.slides.map((item) => (
+        <MenuDesktopButton
+          key={item.menu_title}
+          text={item.menu_title}
+          selected={menuAtom === item.menu_title}
+          onClick={() => {
+            handleClick(item.order);
+          }}
+        ></MenuDesktopButton>
+      ))}
     </div>
   );
 }

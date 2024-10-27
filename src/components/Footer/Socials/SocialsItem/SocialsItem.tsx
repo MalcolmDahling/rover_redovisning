@@ -1,28 +1,23 @@
 import Paragraph from '@/components/Paragraph/Paragraph';
 import { SocialsItemLinkStyle, SocialsItemImageStyle } from './SocialsItem.css';
+import { StoryblokType } from '@/types/storyblok';
 
-type props = {
-  name: string;
-  url: string;
-  imageUrl: string;
-};
-
-export default function SocialsItem(props: props) {
+export default function SocialsItem(props: { visit_us_items: StoryblokType['footer']['visit_us'][number] }) {
   return (
     <a
       className={SocialsItemLinkStyle()}
-      href={props.url}
+      href={props.visit_us_items.link}
       target="_blank"
     >
       <img
-        src={props.imageUrl}
+        src={props.visit_us_items.image}
         className={SocialsItemImageStyle()}
       ></img>
       <Paragraph
         color="white"
         fontSize="small"
       >
-        {props.name}
+        {props.visit_us_items.name}
       </Paragraph>
     </a>
   );

@@ -1,4 +1,4 @@
-import { Colors, MediaBreakpoints } from '@/styles/variables';
+import { Colors, FontSize, MediaBreakpoints } from '@/styles/variables';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const FooterStyle = recipe({
@@ -28,6 +28,7 @@ export const FooterGridContainerStyle = recipe({
         gap: 10,
       },
       [MediaBreakpoints.mobile]: {
+        gap: 40,
         gridTemplateColumns: '1fr',
       },
     },
@@ -53,5 +54,25 @@ export const FooterTaxContainerStyle = recipe({
     margin: 'auto',
     maxWidth: 1200,
     padding: 10,
+  },
+});
+
+export const FooterAddressStyle = recipe({
+  base: {
+    color: 'white',
+    fontStyle: 'normal',
+    fontSize: FontSize.small,
+  },
+});
+
+export const FooterLinkStyle = recipe({
+  base: {
+    color: Colors.white,
+    textDecorationColor: 'transparent',
+    transition: 'all 250ms',
+
+    ':hover': {
+      textDecorationColor: Colors.white,
+    },
   },
 });
