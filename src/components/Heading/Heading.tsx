@@ -6,7 +6,7 @@ type props = {
   text?: string;
   color: 'black' | 'white';
   children: React.ReactNode;
-  fontSize: 'small' | 'medium' | 'large';
+  fontSize: 'xs' | 'small' | 'medium' | 'large';
   bold: boolean;
   margin?: boolean;
   onClick?: () => void;
