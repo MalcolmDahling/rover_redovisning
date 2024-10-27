@@ -7,6 +7,7 @@ export const FooterStyle = recipe({
     paddingBottom: 20,
 
     backgroundColor: Colors.green,
+    borderTop: `2px solid ${Colors.black}`,
   },
 });
 

@@ -11,11 +11,9 @@ import Wrapper from '@/components/Wrapper/Wrapper';
 export default async function Index() {
   const res = await fetch(`${process.env.URL}/api/storyblok`, { next: { revalidate: 60 } });
   const data = await res.json();
-  console.log(data.menu[0].content);
 
   return (
     <Wrapper>
-      {'Data Menu: ' + data.menu[0].content.Text}
       <Header></Header>
       <Main>
         <Slider></Slider>

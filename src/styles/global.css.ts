@@ -7,7 +7,7 @@ export const ModernSansLight = fontFace({
 
 globalStyle('html, body', {
   margin: 0,
-  backgroundColor: Colors.white,
+  backgroundColor: Colors.black,
   overflowX: 'hidden',
 });
 
