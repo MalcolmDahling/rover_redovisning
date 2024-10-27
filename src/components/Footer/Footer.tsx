@@ -5,6 +5,8 @@ import Socials from './Socials/Socials';
 import { StoryblokType } from '@/types/storyblok';
 
 export default function Footer(props: { footer: StoryblokType['footer']; contact_information: StoryblokType['contact_information'] }) {
+  console.log(props.footer.address_title);
+
   return (
     <footer className={FooterStyle()}>
       <div className={FooterGridContainerStyle()}>
