@@ -5,7 +5,6 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
-    console.log('Revalidation requested for path: /');
     revalidatePath('/');
 
     return NextResponse.json({ message: 'Revalidation successful' }, { status: 200 });
