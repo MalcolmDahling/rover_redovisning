@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function revalidate(req: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
     revalidatePath('/');
 
