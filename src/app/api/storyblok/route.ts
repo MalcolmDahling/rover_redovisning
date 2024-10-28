@@ -7,6 +7,8 @@ export async function GET() {
   });
 
   try {
+    await storyblok.cache.clear();
+
     /*prettier-ignore*/
     const [contact_information, footer, logo, slides, website_name] = await Promise.all([
       storyblok.get('cdn/stories', { starts_with: 'contact-information' }),
