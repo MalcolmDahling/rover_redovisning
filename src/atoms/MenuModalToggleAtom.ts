@@ -1,6 +1,3 @@
-import { atom } from 'recoil';
+import { atom } from 'jotai';
 
-export const MenuModalToggleAtom = atom({
-  key: 'MenuModalToggleAtom',
-  default: false,
-});
+export const MenuModalToggleAtom = atom(false);

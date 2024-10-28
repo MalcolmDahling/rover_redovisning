@@ -1,9 +1,6 @@
-import { atom } from 'recoil';
+import { atom } from 'jotai';
 
-export const MoveToSlideAtom = atom<{ index: number; date: number }>({
-  key: 'MoveToSlideAtom',
-  default: {
-    index: 0,
-    date: Date.now(),
-  },
+export const MoveToSlideAtom = atom({
+  index: 0,
+  date: Date.now(),
 });

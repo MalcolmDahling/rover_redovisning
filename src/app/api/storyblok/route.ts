@@ -1,5 +1,3 @@
-export const revalidate = 60;
-
 import { NextResponse } from 'next/server';
 const StoryblokClient = require('storyblok-js-client');
 

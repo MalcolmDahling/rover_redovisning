@@ -1,13 +1,13 @@
 import { MenuAtom } from '@/atoms/MenuAtom';
-import { useRecoilState } from 'recoil';
 import { MenuDesktopContainerStyle } from './MenuDesktop.css';
 import MenuDesktopButton from './MenuDesktopButton/MenuDesktopButton';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
 import { StoryblokType } from '@/types/storyblok';
+import { useAtom } from 'jotai';
 
 export default function MenuDesktop(props: { slides: StoryblokType['slides'] }) {
-  const [menuAtom, setMenuAtom] = useRecoilState(MenuAtom);
-  const [moveToSlideAtom, setMoveToSlideAtom] = useRecoilState(MoveToSlideAtom);
+  const [menuAtom, setMenuAtom] = useAtom(MenuAtom);
+  const [moveToSlideAtom, setMoveToSlideAtom] = useAtom(MoveToSlideAtom);
 
   function handleClick(index: number) {
     setMoveToSlideAtom({ index: index, date: Date.now() });

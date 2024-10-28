@@ -1,14 +1,14 @@
 'use client';
 
-import { useRecoilState } from 'recoil';
 import { HamburgerContainerStyle, HamburgerLineStyle } from './Hamburger.css';
 import { MenuModalToggleAtom } from '@/atoms/MenuModalToggleAtom';
 import useBreakpoint from 'use-breakpoint';
 import { Breakpoints } from '@/styles/variables';
+import { useAtom } from 'jotai';
 
 export default function Hamburger() {
   const { breakpoint } = useBreakpoint(Breakpoints);
-  const [menuModalToggleAtom, setMenuModalToggleAtom] = useRecoilState(MenuModalToggleAtom);
+  const [menuModalToggleAtom, setMenuModalToggleAtom] = useAtom(MenuModalToggleAtom);
 
   if (breakpoint !== 'desktop') {
     return (

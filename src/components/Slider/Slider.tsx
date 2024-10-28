@@ -5,14 +5,14 @@ import Slide from './Slide/Slide';
 import 'keen-slider/keen-slider.min.css';
 import { SliderStyle } from './Slider.css';
 import { useEffect } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
 import { MenuAtom } from '@/atoms/MenuAtom';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
 import { StoryblokType } from '@/types/storyblok';
+import { useAtom } from 'jotai';
 
 export default function Slider(props: { slides: StoryblokType['slides'] }) {
-  const [menuAtom, setMenuAtom] = useRecoilState(MenuAtom);
-  const moveToSlideAtom = useRecoilValue(MoveToSlideAtom);
+  const [menuAtom, setMenuAtom] = useAtom(MenuAtom);
+  const [moveToSlideAtom, setMoveToSlideAtom] = useAtom(MoveToSlideAtom);
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
     drag: true,

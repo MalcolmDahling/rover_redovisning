@@ -1,6 +1,3 @@
-import { atom } from 'recoil';
+import { atom } from 'jotai';
 
-export const MenuAtom = atom<string>({
-  key: 'MenuAtom',
-  default: 'HEM',
-});
+export const MenuAtom = atom('HEM');

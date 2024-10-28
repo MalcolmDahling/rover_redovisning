@@ -1,6 +1,5 @@
 'use client';
 
-import { useRecoilState } from 'recoil';
 import { MenuModalContainerStyle } from './MenuModal.css';
 import { MenuModalToggleAtom } from '@/atoms/MenuModalToggleAtom';
 import MenuModalItem from './MenuModalItem/MenuModalItem';
@@ -9,10 +8,11 @@ import { Breakpoints } from '@/styles/variables';
 import { useEffect } from 'react';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
 import { StoryblokType } from '@/types/storyblok';
+import { useAtom } from 'jotai';
 
 export default function MenuModal(props: { slides: StoryblokType['slides'] }) {
-  const [menuModalToggleAtom, setMenuModalToggleAtom] = useRecoilState(MenuModalToggleAtom);
-  const [moveToSlideAtom, setMoveToSlideAtom] = useRecoilState(MoveToSlideAtom);
+  const [menuModalToggleAtom, setMenuModalToggleAtom] = useAtom(MenuModalToggleAtom);
+  const [moveToSlideAtom, setMoveToSlideAtom] = useAtom(MoveToSlideAtom);
 
   const { breakpoint } = useBreakpoint(Breakpoints);
 

@@ -6,12 +6,12 @@ import { HeaderContainerStyle, HeaderStyle } from './Header.css';
 import MenuDesktop from './MenuDesktop/MenuDesktop';
 import { Breakpoints } from '@/styles/variables';
 import Logo from '../Logo/Logo';
-import { useRecoilState } from 'recoil';
 import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
 import { StoryblokType } from '@/types/storyblok';
+import { useAtom } from 'jotai';
 
 export default function Header(props: { website_name: StoryblokType['website_name']; slides: StoryblokType['slides']; logo: StoryblokType['logo'] }) {
-  const [moveToSlideAtom, setMoveToSlideAtom] = useRecoilState(MoveToSlideAtom);
+  const [moveToSlideAtom, setMoveToSlideAtom] = useAtom(MoveToSlideAtom);
   const { breakpoint } = useBreakpoint(Breakpoints);
 
   if (!breakpoint) {

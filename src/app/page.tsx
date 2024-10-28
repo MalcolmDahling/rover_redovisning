@@ -1,4 +1,4 @@
-'use server';
+export const revalidate = 60;
 
 import Footer from '@/components/Footer/Footer';
 import Hamburger from '@/components/Header/Hamburger/Hamburger';
@@ -11,7 +11,7 @@ import { StoryblokType } from '@/types/storyblok';
 
 export default async function Index() {
   const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api/storyblok' : `${process.env.URL}/api/storyblok`;
-  const res = await fetch(url, { next: { revalidate: 60 } });
+  const res = await fetch(url);
   const data: StoryblokType = await res.json();
 
   return (
