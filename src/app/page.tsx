@@ -1,3 +1,5 @@
+'use server';
+
 export const revalidate = 60;
 
 import Footer from '@/components/Footer/Footer';
