@@ -1,5 +1,3 @@
-export const revalidate = 60;
-
 import Footer from '@/components/Footer/Footer';
 import Hamburger from '@/components/Header/Hamburger/Hamburger';
 import Header from '@/components/Header/Header';
@@ -8,6 +6,8 @@ import MenuModal from '@/components/MenuModal/MenuModal';
 import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
 import { StoryblokType } from '@/types/storyblok';
+
+export const revalidate = 60;
 
 export default async function Index() {
   const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api/storyblok' : `${process.env.URL}/api/storyblok`;
