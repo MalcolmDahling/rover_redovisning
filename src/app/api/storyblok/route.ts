@@ -4,10 +4,6 @@ const StoryblokClient = require('storyblok-js-client');
 export async function GET() {
   const storyblok = new StoryblokClient({
     accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-    cache: {
-      clear: 'auto',
-      type: 'memory',
-    },
   });
 
   try {
