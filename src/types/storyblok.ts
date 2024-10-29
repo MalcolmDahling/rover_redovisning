@@ -25,7 +25,6 @@ type Footer = {
     image: string;
   }[];
   component: string;
-  bottom_text: string;
   address_title: string;
   contact_title: string;
   visit_us_title: string;

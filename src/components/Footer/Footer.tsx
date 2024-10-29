@@ -1,5 +1,4 @@
-import Paragraph from '../Paragraph/Paragraph';
-import { FooterAddressStyle, FooterGridContainerStyle, FooterItemStyle, FooterLinkStyle, FooterStyle, FooterTaxContainerStyle } from './Footer.css';
+import { FooterAddressStyle, FooterGridContainerStyle, FooterItemStyle, FooterLinkStyle, FooterStyle } from './Footer.css';
 import Heading from '../Heading/Heading';
 import Socials from './Socials/Socials';
 import { StoryblokType } from '@/types/storyblok';
@@ -61,15 +60,6 @@ export default function Footer(props: { footer: StoryblokType['footer']; contact
           visit_us_title={props.footer.visit_us_title}
           visit_us_items={props.footer.visit_us}
         ></Socials>
-      </div>
-
-      <div className={FooterTaxContainerStyle()}>
-        <Paragraph
-          color="white"
-          fontSize="xs"
-        >
-          {props.footer.bottom_text}
-        </Paragraph>
       </div>
     </footer>
   );

@@ -49,14 +49,6 @@ export const FooterItemStyle = recipe({
   },
 });
 
-export const FooterTaxContainerStyle = recipe({
-  base: {
-    margin: 'auto',
-    maxWidth: 1200,
-    padding: 10,
-  },
-});
-
 export const FooterAddressStyle = recipe({
   base: {
     color: 'white',
