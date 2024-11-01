@@ -4,7 +4,6 @@ import { recipe } from '@vanilla-extract/recipes';
 export const FooterStyle = recipe({
   base: {
     width: '100%',
-    paddingBottom: 20,
 
     backgroundColor: Colors.green,
     borderTop: `2px solid ${Colors.black}`,
@@ -16,20 +15,14 @@ export const FooterGridContainerStyle = recipe({
     margin: 'auto',
     maxWidth: 1200,
     padding: 10,
-    paddingTop: 20,
-    paddingBottom: 20,
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, 250px)',
+    display: 'flex',
     gap: 15,
     justifyContent: 'space-between',
 
     '@media': {
-      [MediaBreakpoints.tablet]: {
-        gap: 10,
-      },
+      [MediaBreakpoints.tablet]: {},
       [MediaBreakpoints.mobile]: {
-        gap: 40,
-        gridTemplateColumns: '1fr',
+        flexDirection: 'column',
       },
     },
   },
