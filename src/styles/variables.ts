@@ -11,13 +11,13 @@ export const Colors = {
 export const Breakpoints = {
   mobile: 0,
   tablet: 768,
-  desktop: 1280,
+  desktop: 1279,
 };
 
 export const MediaBreakpoints = {
   mobile: 'only screen and (max-width: 768px)',
-  tablet: 'only screen and (min-width: 769px) and (max-width: 1279px)',
-  desktop: 'only screen and (min-width: 1280px)',
+  tablet: 'only screen and (min-width: 769px) and (max-width: 1278px)',
+  desktop: 'only screen and (min-width: 1279px)',
 };
 
 export const FontSize = {
