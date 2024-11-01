@@ -52,7 +52,7 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
             ></img>
           )}
 
-          <div style={{ height: footerHeightAtom }}></div>
+          <div style={{ height: 265 }}></div>
         </div>
       </div>
     </div>

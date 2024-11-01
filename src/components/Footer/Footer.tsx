@@ -19,6 +19,7 @@ export default function Footer(props: { footer: StoryblokType['footer']; contact
   }
 
   useEffect(() => {
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
