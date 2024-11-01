@@ -3,6 +3,10 @@ import { recipe } from '@vanilla-extract/recipes';
 
 export const HeaderStyle = recipe({
   base: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0,
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -11,9 +15,6 @@ export const HeaderStyle = recipe({
     boxSizing: 'border-box',
 
     zIndex: 1,
-
-    backgroundColor: Colors.green,
-    borderBottom: `2px solid ${Colors.darkGray}`,
   },
 });
 
@@ -25,5 +26,7 @@ export const HeaderContainerStyle = recipe({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
+
+    borderBottom: `1px solid ${Colors.white}`,
   },
 });

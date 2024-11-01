@@ -2,8 +2,12 @@ import Paragraph from '@/components/Paragraph/Paragraph';
 import { SlideBackgroundImageStyle, SlideContainerStyle, SlideFlexContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideTextContainerStyle } from './Slide.css';
 import Heading from '@/components/Heading/Heading';
 import { StoryblokType } from '@/types/storyblok';
+import { useAtom } from 'jotai';
+import { FooterHeightAtom } from '@/atoms/FooterHeightAtom';
 
 export default function Slide(props: { slide: StoryblokType['slides'][number] }) {
+  const [footerHeightAtom, setFooterHeightAtom] = useAtom(FooterHeightAtom);
+
   return (
     <div className={`keen-slider__slide ${SlideContainerStyle()}`}>
       {props.slide.background_image && (
@@ -15,6 +19,7 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
       )}
 
       <div className={SlideInnerContainerStyle()}>
+        <div style={{ height: 123 }}></div>
         {props.slide.title && (
           <Heading
             type="h1"
@@ -46,6 +51,8 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
               className={SlideImageStyle()}
             ></img>
           )}
+
+          <div style={{ height: footerHeightAtom }}></div>
         </div>
       </div>
     </div>

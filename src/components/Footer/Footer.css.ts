@@ -3,10 +3,11 @@ import { recipe } from '@vanilla-extract/recipes';
 
 export const FooterStyle = recipe({
   base: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0,
     width: '100%',
-
-    backgroundColor: Colors.green,
-    borderTop: `2px solid ${Colors.black}`,
   },
 });
 
@@ -15,9 +16,12 @@ export const FooterGridContainerStyle = recipe({
     margin: 'auto',
     maxWidth: 1200,
     padding: 10,
+
     display: 'flex',
     gap: 15,
     justifyContent: 'space-between',
+
+    borderTop: `1px solid ${Colors.white}`,
 
     '@media': {
       [MediaBreakpoints.tablet]: {},

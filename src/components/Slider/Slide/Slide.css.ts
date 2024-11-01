@@ -5,13 +5,21 @@ export const SlideContainerStyle = recipe({
   base: {
     position: 'relative',
     width: '100vw',
-    flexShrink: 0,
 
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
 
     cursor: 'pointer',
+
+    '@media': {
+      [MediaBreakpoints.tablet]: {
+        alignItems: 'flex-start',
+      },
+      [MediaBreakpoints.mobile]: {
+        alignItems: 'flex-start',
+      },
+    },
   },
 });
 
@@ -19,7 +27,6 @@ export const SlideInnerContainerStyle = recipe({
   base: {
     maxWidth: 1200,
     width: '100vw',
-    padding: 10,
 
     display: 'flex',
     flexDirection: 'column',
@@ -31,24 +38,12 @@ export const SlideInnerContainerStyle = recipe({
 export const SlideFlexContainerStyle = recipe({
   base: {
     display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     gap: 20,
 
-    '@media': {
-      [MediaBreakpoints.desktop]: {
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      },
-      [MediaBreakpoints.tablet]: {
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-      },
-      [MediaBreakpoints.mobile]: {
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-      },
-    },
+    padding: 10,
   },
 });
 
