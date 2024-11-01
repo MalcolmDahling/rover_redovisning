@@ -27,6 +27,10 @@ export const SlideInnerContainerStyle = recipe({
   base: {
     maxWidth: 1200,
     width: '100vw',
+    paddingTop: 10,
+    paddingRight: 30,
+    paddingBottom: 10,
+    paddingLeft: 10,
 
     display: 'flex',
     flexDirection: 'column',
@@ -42,8 +46,6 @@ export const SlideFlexContainerStyle = recipe({
     justifyContent: 'flex-start',
     alignItems: 'center',
     gap: 20,
-
-    padding: 10,
   },
 });
 
