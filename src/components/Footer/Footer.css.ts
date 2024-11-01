@@ -46,7 +46,7 @@ export const FooterAddressStyle = recipe({
   base: {
     color: 'white',
     fontStyle: 'normal',
-    fontSize: FontSize.small,
+    fontSize: FontSize.xs,
   },
 });
 

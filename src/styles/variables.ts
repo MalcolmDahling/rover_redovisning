@@ -21,8 +21,8 @@ export const MediaBreakpoints = {
 };
 
 export const FontSize = {
-  xs: 14,
-  small: 20,
+  xs: 20,
+  small: 22,
   medium: 26,
   large: 32,
 };

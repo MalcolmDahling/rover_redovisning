@@ -35,7 +35,7 @@ export default function Footer(props: { footer: StoryblokType['footer']; contact
             type="h3"
             color="white"
             bold={true}
-            fontSize="small"
+            fontSize="xs"
             margin={false}
           >
             {props.footer.address_title}
@@ -55,7 +55,7 @@ export default function Footer(props: { footer: StoryblokType['footer']; contact
             type="h3"
             color="white"
             bold={true}
-            fontSize="small"
+            fontSize="xs"
             margin={false}
           >
             {props.footer.contact_title}

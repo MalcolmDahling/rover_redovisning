@@ -10,7 +10,7 @@ export default function Socials(props: { visit_us_title: StoryblokType['footer']
         type="h3"
         color="white"
         bold={true}
-        fontSize="small"
+        fontSize="xs"
         margin={false}
       >
         {props.visit_us_title}
