@@ -4,6 +4,7 @@ export type StoryblokType = {
   logo: Logo;
   slides: Slide[];
   website_name: WebsiteName;
+  favicon: Favicon;
 };
 
 type ContactInformation = {
@@ -67,4 +68,18 @@ type WebsiteName = {
   _uid: string;
   name: string;
   component: string;
+};
+
+type Favicon = {
+  _uid: string;
+  component: string;
+  favicon_16x16: {
+    filename: string;
+  };
+  favicon_32x32: {
+    filename: string;
+  };
+  favicon_48x48: {
+    filename: string;
+  };
 };

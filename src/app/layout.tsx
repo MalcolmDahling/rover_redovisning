@@ -1,8 +1,12 @@
 'use client';
 
+import { FaviconsAtom } from '@/atoms/FaviconsAtom';
 import '@/styles/global.css';
+import { useAtom } from 'jotai';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [faviconsAtom, setFaviconsAtom] = useAtom(FaviconsAtom);
+
   return (
     <html lang="en">
       <head>
@@ -10,23 +14,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           rel="icon"
           type="image/png"
-          href="/images/favicon/favicon_16x16.png"
+          href={faviconsAtom[0]}
           sizes="16x16"
         ></link>
         <link
           rel="icon"
           type="image/png"
-          href="/images/favicon/favicon_32x32.png"
+          href={faviconsAtom[1]}
           sizes="32x32"
         ></link>
         <link
           rel="icon"
           type="image/png"
-          href="/images/favicon/favicon_48x48.png"
+          href={faviconsAtom[2]}
           sizes="48x48"
         ></link>
       </head>
-
       <body>{children}</body>
     </html>
   );

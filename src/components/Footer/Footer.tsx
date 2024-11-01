@@ -1,11 +1,34 @@
+'use client';
+
 import { FooterAddressStyle, FooterGridContainerStyle, FooterItemStyle, FooterLinkStyle, FooterStyle } from './Footer.css';
 import Heading from '../Heading/Heading';
 import Socials from './Socials/Socials';
 import { StoryblokType } from '@/types/storyblok';
+import { useAtom } from 'jotai';
+import { useEffect, useRef } from 'react';
+import { FooterHeightAtom } from '@/atoms/FooterHeightAtom';
 
 export default function Footer(props: { footer: StoryblokType['footer']; contact_information: StoryblokType['contact_information'] }) {
+  const [footerHeightAtom, setFooterHeightAtom] = useAtom(FooterHeightAtom);
+  const ref = useRef<HTMLDivElement>(null);
+
+  function handleResize() {
+    if (!ref.current) return;
+
+    setFooterHeightAtom(ref.current.getBoundingClientRect().height);
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <footer className={FooterStyle()}>
+    <footer
+      ref={ref}
+      className={FooterStyle()}
+    >
       <div className={FooterGridContainerStyle()}>
         <div className={FooterItemStyle()}>
           <Heading

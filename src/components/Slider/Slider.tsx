@@ -38,7 +38,7 @@ export default function Slider(props: { slides: StoryblokType['slides'] }) {
   }, [moveToSlideAtom]);
 
   return (
-    <main
+    <div
       ref={sliderRef}
       className={`keen-slider ${SliderStyle()}`}
     >
@@ -48,6 +48,6 @@ export default function Slider(props: { slides: StoryblokType['slides'] }) {
           slide={item}
         ></Slide>
       ))}
-    </main>
+    </div>
   );
 }

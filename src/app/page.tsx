@@ -3,6 +3,7 @@ import Hamburger from '@/components/Header/Hamburger/Hamburger';
 import Header from '@/components/Header/Header';
 import Main from '@/components/Main/Main';
 import MenuModal from '@/components/MenuModal/MenuModal';
+import SetFavicons from '@/components/SetFavicons/SetFavicons';
 import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
 import { StoryblokType } from '@/types/storyblok';
@@ -16,6 +17,7 @@ export default async function Index() {
 
   return (
     <Wrapper>
+      <SetFavicons {...data.favicon}></SetFavicons>
       <Header
         website_name={data.website_name}
         slides={data.slides}

@@ -8,7 +8,6 @@ export const ModernSansLight = fontFace({
 globalStyle('html, body', {
   margin: 0,
   backgroundColor: Colors.black,
-  overflowX: 'hidden',
 });
 
 globalStyle('*', {

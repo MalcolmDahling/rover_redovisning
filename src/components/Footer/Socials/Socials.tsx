@@ -1,5 +1,5 @@
 import Heading from '@/components/Heading/Heading';
-import { SocialsContainerStyle } from './Socials.css';
+import { SocialsBottomContainerStyle, SocialsContainerStyle } from './Socials.css';
 import SocialsItem from './SocialsItem/SocialsItem';
 import { StoryblokType } from '@/types/storyblok';
 
@@ -15,12 +15,14 @@ export default function Socials(props: { visit_us_title: StoryblokType['footer']
       >
         {props.visit_us_title}
       </Heading>
-      {props.visit_us_items.map((item) => (
-        <SocialsItem
-          key={item.name}
-          visit_us_items={item}
-        ></SocialsItem>
-      ))}
+      <div className={SocialsBottomContainerStyle()}>
+        {props.visit_us_items.map((item) => (
+          <SocialsItem
+            key={item.name}
+            visit_us_items={item}
+          ></SocialsItem>
+        ))}
+      </div>
     </div>
   );
 }
