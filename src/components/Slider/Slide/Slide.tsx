@@ -1,9 +1,9 @@
-import Paragraph from '@/components/Paragraph/Paragraph';
-import { SlideBackgroundImageStyle, SlideContainerStyle, SlideFlexContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideTextContainerStyle } from './Slide.css';
-import Heading from '@/components/Heading/Heading';
+import { SlideBackgroundImageStyle, SlideContainerStyle, SlideFlexContainerStyle, SlideInnerContainerStyle } from './Slide.css';
 import { StoryblokType } from '@/types/storyblok';
 import { useAtom } from 'jotai';
 import { FooterHeightAtom } from '@/atoms/FooterHeightAtom';
+import { render } from 'storyblok-rich-text-react-renderer';
+import Heading from '@/components/Heading/Heading';
 
 export default function Slide(props: { slide: StoryblokType['slides'][number] }) {
   const [footerHeightAtom, setFooterHeightAtom] = useAtom(FooterHeightAtom);
@@ -20,40 +20,12 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
 
       <div className={SlideInnerContainerStyle()}>
         <div style={{ height: 123 }}></div>
-        {props.slide.title && (
-          <Heading
-            type="h1"
-            color={props.slide.text_color}
-            fontSize={props.slide.font_size_heading}
-            bold={false}
-            textShadow={true}
-          >
-            {props.slide.title}
-          </Heading>
-        )}
 
-        <div className={SlideFlexContainerStyle()}>
-          {props.slide.text && (
-            <div className={SlideTextContainerStyle()}>
-              <Paragraph
-                fontSize={props.slide.font_size_text}
-                color={props.slide.text_color}
-                textShadow={true}
-              >
-                {props.slide.text}
-              </Paragraph>
-            </div>
-          )}
+        {props.slide.title && render(props.slide.title)}
 
-          {props.slide.image && (
-            <img
-              src={props.slide.image}
-              className={SlideImageStyle()}
-            ></img>
-          )}
+        <div className={SlideFlexContainerStyle()}>{props.slide.text && render(props.slide.text)}</div>
 
-          <div style={{ height: 265 }}></div>
-        </div>
+        <div style={{ height: 265 }}></div>
       </div>
     </div>
   );

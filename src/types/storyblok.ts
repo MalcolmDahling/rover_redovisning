@@ -52,7 +52,16 @@ type Logo = {
 type Slide = {
   _uid: string;
   order: number;
-  text: string;
+  text: {
+    type: string;
+    content: {
+      type: string;
+      content: {
+        text: string;
+        type: string;
+      }[];
+    }[];
+  }[];
   image: string;
   title: string;
   component: string;

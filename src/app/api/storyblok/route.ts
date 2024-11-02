@@ -23,7 +23,6 @@ export async function GET() {
       arr.push({
         ...item.content,
         background_image: item.content.background_image.filename,
-        image: item.content.image.filename,
         order: parseInt(item.content.order),
       });
     });
