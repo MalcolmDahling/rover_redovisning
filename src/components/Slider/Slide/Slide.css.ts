@@ -1,4 +1,5 @@
-import { MediaBreakpoints } from '@/styles/variables';
+import { FontSize, MediaBreakpoints } from '@/styles/variables';
+import { globalStyle } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 export const SlideContainerStyle = recipe({
@@ -37,6 +38,25 @@ export const SlideInnerContainerStyle = recipe({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  variants: {
+    fontSize: {
+      xs: {
+        fontSize: FontSize.xs,
+      },
+      small: {
+        fontSize: FontSize.small,
+      },
+      medium: { fontSize: FontSize.medium },
+      large: {
+        fontSize: FontSize.large,
+      },
+    },
+  },
+});
+
+globalStyle(`${SlideInnerContainerStyle()} > *`, {
+  textShadow: '2px 2px 2px black',
 });
 
 export const SlideFlexContainerStyle = recipe({
@@ -47,13 +67,28 @@ export const SlideFlexContainerStyle = recipe({
     gap: 20,
 
     userSelect: 'text',
+  },
 
-    selectors: {
-      'p &': {
-        margin: 0,
+  variants: {
+    fontSize: {
+      xs: {
+        fontSize: FontSize.xs,
+      },
+      small: {
+        fontSize: FontSize.small,
+      },
+      medium: { fontSize: FontSize.medium },
+      large: {
+        fontSize: FontSize.large,
       },
     },
   },
+});
+
+globalStyle(`${SlideFlexContainerStyle()} > *`, {
+  margin: 0,
+
+  textShadow: '2px 2px 2px black',
 });
 
 export const SlideBackgroundImageStyle = recipe({

@@ -18,12 +18,12 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
         ></img>
       )}
 
-      <div className={SlideInnerContainerStyle()}>
+      <div className={SlideInnerContainerStyle({ fontSize: props.slide.font_size_heading })}>
         <div style={{ height: 123 }}></div>
 
-        {props.slide.title && render(props.slide.title)}
+        {props.slide.heading && render(props.slide.heading)}
 
-        <div className={SlideFlexContainerStyle()}>{props.slide.text && render(props.slide.text)}</div>
+        <div className={SlideFlexContainerStyle({ fontSize: props.slide.font_size_text })}>{props.slide.text && render(props.slide.text)}</div>
 
         <div style={{ height: 265 }}></div>
       </div>

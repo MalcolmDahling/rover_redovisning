@@ -63,7 +63,7 @@ type Slide = {
     }[];
   }[];
   image: string;
-  title: string;
+  heading: string;
   component: string;
   menu_title: string;
   text_color: 'black' | 'white';
