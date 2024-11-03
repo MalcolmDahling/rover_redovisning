@@ -1,4 +1,4 @@
-import { SlideBackgroundImageStyle, SlideContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideTextContainerStyle } from './Slide.css';
+import { SlideBackgroundImageStyle, SlideContainerStyle, SlideHeadingContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideTextContainerStyle } from './Slide.css';
 import { StoryblokType } from '@/types/storyblok';
 import { useAtom } from 'jotai';
 import { FooterHeightAtom } from '@/atoms/FooterHeightAtom';
@@ -20,7 +20,7 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
       <div className={SlideInnerContainerStyle({ fontSize: props.slide.font_size_heading })}>
         <div style={{ height: 123 }}></div>
 
-        {props.slide.heading && render(props.slide.heading)}
+        <div className={SlideHeadingContainerStyle()}>{props.slide.heading && render(props.slide.heading)}</div>
 
         <div className={SlideTextContainerStyle({ fontSize: props.slide.font_size_text })}>
           {props.slide.image && props.slide.image.filename && (

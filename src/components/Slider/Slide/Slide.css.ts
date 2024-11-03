@@ -29,7 +29,7 @@ export const SlideBackgroundImageStyle = recipe({
     position: 'absolute',
     inset: 0,
     width: '100%',
-    height: 'auto',
+    height: '100%',
     minWidth: 1920,
     zIndex: -1,
   },
@@ -66,6 +66,14 @@ export const SlideInnerContainerStyle = recipe({
 
 globalStyle(`${SlideInnerContainerStyle()}  *`, {
   textShadow: '2px 2px 2px black',
+});
+
+export const SlideHeadingContainerStyle = recipe({
+  base: {
+    textAlign: 'center',
+    paddingRight: 10,
+    paddingLeft: 10,
+  },
 });
 
 export const SlideTextContainerStyle = recipe({
