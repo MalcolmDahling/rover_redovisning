@@ -65,6 +65,7 @@ type Slide = {
   image: {
     filename: string;
   };
+  image_width: string;
   heading: string;
   component: string;
   menu_title: string;

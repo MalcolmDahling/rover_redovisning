@@ -70,28 +70,17 @@ globalStyle(`${SlideInnerContainerStyle()} > *`, {
   textShadow: '2px 2px 2px black',
 });
 
-export const SlideFlexContainerStyle = recipe({
+export const SlideTextContainerStyle = recipe({
   base: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    gap: 20,
-
+    textAlign: 'justify',
     userSelect: 'text',
 
     '@media': {
-      [MediaBreakpoints.desktop]: {
-        justifyContent: 'space-between',
-        alignItems: 'flex-start',
-      },
-      [MediaBreakpoints.tablet]: {
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-      },
+      [MediaBreakpoints.desktop]: {},
+      [MediaBreakpoints.tablet]: {},
       [MediaBreakpoints.mobile]: {
+        display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
       },
     },
   },
@@ -112,38 +101,24 @@ export const SlideFlexContainerStyle = recipe({
   },
 });
 
-globalStyle(`${SlideFlexContainerStyle()} > *`, {
-  margin: 0,
+globalStyle(`${SlideTextContainerStyle()} > *`, {
+  margin: 10,
 
   textShadow: '2px 2px 2px black',
 });
 
-export const SlideTextContainerStyle = recipe({
-  base: {
-    userSelect: 'text',
-
-    '@media': {
-      [MediaBreakpoints.desktop]: {
-        flexGrow: 1,
-        flexBasis: '50%',
-      },
-    },
-  },
-});
-
 export const SlideImageStyle = recipe({
   base: {
-    width: '100%',
-
     '@media': {
       [MediaBreakpoints.desktop]: {
-        flexBasis: '40%',
+        float: 'right',
       },
       [MediaBreakpoints.tablet]: {
-        maxWidth: 500,
+        float: 'right',
       },
       [MediaBreakpoints.mobile]: {
-        maxWidth: '100%',
+        alignSelf: 'center',
+        maxWidth: 275,
       },
     },
   },

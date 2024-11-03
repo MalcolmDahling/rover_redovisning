@@ -1,9 +1,8 @@
-import { SlideBackgroundImageStyle, SlideContainerStyle, SlideFlexContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideTextContainerStyle } from './Slide.css';
+import { SlideBackgroundImageStyle, SlideContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideTextContainerStyle } from './Slide.css';
 import { StoryblokType } from '@/types/storyblok';
 import { useAtom } from 'jotai';
 import { FooterHeightAtom } from '@/atoms/FooterHeightAtom';
 import { render } from 'storyblok-rich-text-react-renderer';
-import Heading from '@/components/Heading/Heading';
 
 export default function Slide(props: { slide: StoryblokType['slides'][number] }) {
   const [footerHeightAtom, setFooterHeightAtom] = useAtom(FooterHeightAtom);
@@ -23,15 +22,15 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
 
         {props.slide.heading && render(props.slide.heading)}
 
-        <div className={SlideFlexContainerStyle({ fontSize: props.slide.font_size_text })}>
-          <div className={SlideTextContainerStyle()}>{props.slide.text && render(props.slide.text)}</div>
-
+        <div className={SlideTextContainerStyle({ fontSize: props.slide.font_size_text })}>
           {props.slide.image && props.slide.image.filename && (
             <img
               src={props.slide.image.filename}
               className={SlideImageStyle()}
+              style={{ width: `${props.slide.image_width}px` }}
             ></img>
           )}
+          {props.slide.text && render(props.slide.text)}
         </div>
 
         <div style={{ height: 265 }}></div>
