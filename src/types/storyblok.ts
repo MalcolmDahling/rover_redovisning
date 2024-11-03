@@ -62,7 +62,9 @@ type Slide = {
       }[];
     }[];
   }[];
-  image: string;
+  image: {
+    filename: string;
+  };
   heading: string;
   component: string;
   menu_title: string;

@@ -24,13 +24,24 @@ export const SlideContainerStyle = recipe({
   },
 });
 
+export const SlideBackgroundImageStyle = recipe({
+  base: {
+    position: 'absolute',
+    inset: 0,
+    width: '100%',
+    height: 'auto',
+    minWidth: 1920,
+    zIndex: -1,
+  },
+});
+
 export const SlideInnerContainerStyle = recipe({
   base: {
     maxWidth: 1200,
     width: '100vw',
     paddingTop: 10,
     paddingRight: 30,
-    paddingBottom: 10,
+    paddingBottom: 20,
     paddingLeft: 10,
 
     display: 'flex',
@@ -62,11 +73,27 @@ globalStyle(`${SlideInnerContainerStyle()} > *`, {
 export const SlideFlexContainerStyle = recipe({
   base: {
     display: 'flex',
-    flexDirection: 'column',
     justifyContent: 'flex-start',
     gap: 20,
 
     userSelect: 'text',
+
+    '@media': {
+      [MediaBreakpoints.desktop]: {
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+      },
+      [MediaBreakpoints.tablet]: {
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+      },
+      [MediaBreakpoints.mobile]: {
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+      },
+    },
   },
 
   variants: {
@@ -91,13 +118,33 @@ globalStyle(`${SlideFlexContainerStyle()} > *`, {
   textShadow: '2px 2px 2px black',
 });
 
-export const SlideBackgroundImageStyle = recipe({
+export const SlideTextContainerStyle = recipe({
   base: {
-    position: 'absolute',
-    inset: 0,
+    userSelect: 'text',
+
+    '@media': {
+      [MediaBreakpoints.desktop]: {
+        flexGrow: 1,
+        flexBasis: '50%',
+      },
+    },
+  },
+});
+
+export const SlideImageStyle = recipe({
+  base: {
     width: '100%',
-    height: 'auto',
-    minWidth: 1920,
-    zIndex: -1,
+
+    '@media': {
+      [MediaBreakpoints.desktop]: {
+        flexBasis: '40%',
+      },
+      [MediaBreakpoints.tablet]: {
+        maxWidth: 500,
+      },
+      [MediaBreakpoints.mobile]: {
+        maxWidth: '100%',
+      },
+    },
   },
 });
