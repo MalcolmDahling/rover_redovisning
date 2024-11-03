@@ -39,10 +39,8 @@ export const SlideInnerContainerStyle = recipe({
   base: {
     maxWidth: 1200,
     width: '100vw',
-    paddingTop: 10,
-    paddingRight: 30,
-    paddingBottom: 20,
-    paddingLeft: 10,
+    padding: 10,
+    paddingBottom: 30,
 
     display: 'flex',
     flexDirection: 'column',
@@ -66,21 +64,25 @@ export const SlideInnerContainerStyle = recipe({
   },
 });
 
-globalStyle(`${SlideInnerContainerStyle()} > *`, {
+globalStyle(`${SlideInnerContainerStyle()}  *`, {
   textShadow: '2px 2px 2px black',
 });
 
 export const SlideTextContainerStyle = recipe({
   base: {
-    textAlign: 'justify',
     userSelect: 'text',
 
     '@media': {
-      [MediaBreakpoints.desktop]: {},
-      [MediaBreakpoints.tablet]: {},
+      [MediaBreakpoints.desktop]: {
+        textAlign: 'justify',
+      },
+      [MediaBreakpoints.tablet]: {
+        textAlign: 'justify',
+      },
       [MediaBreakpoints.mobile]: {
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'center',
       },
     },
   },
@@ -103,17 +105,17 @@ export const SlideTextContainerStyle = recipe({
 
 globalStyle(`${SlideTextContainerStyle()} > *`, {
   margin: 10,
-
-  textShadow: '2px 2px 2px black',
 });
 
 export const SlideImageStyle = recipe({
   base: {
     '@media': {
       [MediaBreakpoints.desktop]: {
+        paddingLeft: 10,
         float: 'right',
       },
       [MediaBreakpoints.tablet]: {
+        paddingLeft: 10,
         float: 'right',
       },
       [MediaBreakpoints.mobile]: {
