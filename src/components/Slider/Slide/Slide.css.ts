@@ -133,3 +133,12 @@ export const SlideImageStyle = recipe({
     },
   },
 });
+
+export const SlideLinkStyle = recipe({
+  base: {
+    textDecorationLine: 'none',
+    borderBottom: '2px solid transparent',
+
+    transition: 'all 250ms',
+  },
+});

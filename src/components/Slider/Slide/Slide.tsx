@@ -1,8 +1,10 @@
-import { SlideBackgroundImageStyle, SlideContainerStyle, SlideHeadingContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideTextContainerStyle } from './Slide.css';
+import { SlideBackgroundImageStyle, SlideContainerStyle, SlideHeadingContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideLinkStyle, SlideTextContainerStyle } from './Slide.css';
 import { StoryblokType } from '@/types/storyblok';
 import { useAtom } from 'jotai';
 import { FooterHeightAtom } from '@/atoms/FooterHeightAtom';
-import { render } from 'storyblok-rich-text-react-renderer';
+import { render, MARK_LINK } from 'storyblok-rich-text-react-renderer';
+import { isValidElement } from 'react';
+import tinycolor from 'tinycolor2';
 
 export default function Slide(props: { slide: StoryblokType['slides'][number] }) {
   const [footerHeightAtom, setFooterHeightAtom] = useAtom(FooterHeightAtom);
@@ -30,7 +32,31 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
               style={{ width: `${props.slide.image_width}px` }}
             ></img>
           )}
-          {props.slide.text && render(props.slide.text)}
+          {props.slide.text &&
+            render(props.slide.text, {
+              markResolvers: {
+                [MARK_LINK]: (children, props) => {
+                  let linkColor = isValidElement(children) && children.props?.style?.color ? children.props.style.color : 'inherit';
+                  linkColor = tinycolor(linkColor);
+
+                  return (
+                    <a
+                      {...props}
+                      target="_blank"
+                      className={SlideLinkStyle()}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderBottom = `2px solid ${linkColor}`;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderBottom = '2px solid transparent';
+                      }}
+                    >
+                      {children}
+                    </a>
+                  );
+                },
+              },
+            })}
         </div>
 
         <div style={{ height: 265 }}></div>
