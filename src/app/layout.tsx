@@ -13,20 +13,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <title>Rovér Redovisning</title>
         <link
           rel="icon"
-          type="image/png"
+          type="image/svg+xml"
           href={faviconsAtom[0]}
+          sizes="any"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={faviconsAtom[1]}
           sizes="16x16"
         ></link>
         <link
           rel="icon"
           type="image/png"
-          href={faviconsAtom[1]}
+          href={faviconsAtom[2]}
           sizes="32x32"
         ></link>
         <link
           rel="icon"
           type="image/png"
-          href={faviconsAtom[2]}
+          href={faviconsAtom[3]}
           sizes="48x48"
         ></link>
       </head>
