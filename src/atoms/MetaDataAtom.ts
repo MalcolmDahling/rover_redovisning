@@ -6,10 +6,6 @@ export const MetaDataAtom = atom<StoryblokType['meta_data']>({
   description: '',
   keywords: '',
 
-  og_image: {
-    filename: '',
-  },
-
   canonical_url: '',
   apple_touch_icon: {
     filename: '',
