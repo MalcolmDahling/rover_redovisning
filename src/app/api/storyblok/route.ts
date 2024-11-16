@@ -8,13 +8,14 @@ export async function GET() {
 
   try {
     /*prettier-ignore*/
-    const [contact_information, footer, logo, slides, website_name, favicon] = await Promise.all([
+    const [contact_information, footer, logo, slides, website_name, favicon, meta_data] = await Promise.all([
       storyblok.get('cdn/stories', { starts_with: 'contact-information', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'footer', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'logo', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'slides', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'website-name', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'favicon', cv: +new Date() }),
+      storyblok.get('cdn/stories', { starts_with: 'meta-data', cv: +new Date() }),
     ]);
 
     const arr: any[] = [];
@@ -22,7 +23,6 @@ export async function GET() {
     slides.data.stories.forEach((item: any) => {
       arr.push({
         ...item.content,
-        background_image: item.content.background_image.filename,
         order: parseInt(item.content.order),
       });
     });
@@ -47,6 +47,7 @@ export async function GET() {
       slides: arr,
       website_name: website_name.data.stories[0].content,
       favicon: favicon.data.stories[0].content,
+      meta_data: meta_data.data.stories[0].content,
     };
 
     return new NextResponse(JSON.stringify(stories), {

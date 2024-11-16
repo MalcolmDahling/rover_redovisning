@@ -5,6 +5,7 @@ export type StoryblokType = {
   slides: Slide[];
   website_name: WebsiteName;
   favicon: Favicon;
+  meta_data: MetaData;
 };
 
 type ContactInformation = {
@@ -71,9 +72,14 @@ type Slide = {
   menu_title: string;
   text_color: 'black' | 'white';
   font_size_text: 'xs' | 'small' | 'medium' | 'large';
-  background_image: string;
+  background_image: {
+    filename: string;
+  };
   font_size_heading: 'xs' | 'small' | 'medium' | 'large';
   background_image_blur: string;
+  bottom_images?: {
+    filename: string;
+  }[];
 };
 
 type WebsiteName = {
@@ -97,4 +103,22 @@ type Favicon = {
   svg_favicon: {
     filename: string;
   };
+};
+
+type MetaData = {
+  title: string;
+  description: string;
+  keywords: string;
+
+  og_image: {
+    filename: string;
+  };
+
+  canonical_url: string;
+  apple_touch_icon: {
+    filename: string;
+  };
+
+  twitter_title: string;
+  twitter_description: string;
 };

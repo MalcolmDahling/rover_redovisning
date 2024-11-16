@@ -1,19 +1,15 @@
-import { SlideBackgroundImageStyle, SlideContainerStyle, SlideHeadingContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideLinkStyle, SlideTextContainerStyle } from './Slide.css';
+import { SlideBackgroundImageStyle, SlideBottomImageContainerStyle, SlideBottomImageStyle, SlideContainerStyle, SlideHeadingContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideLinkStyle, SlideTextContainerStyle } from './Slide.css';
 import { StoryblokType } from '@/types/storyblok';
-import { useAtom } from 'jotai';
-import { FooterHeightAtom } from '@/atoms/FooterHeightAtom';
 import { render, MARK_LINK } from 'storyblok-rich-text-react-renderer';
 import { isValidElement } from 'react';
 import tinycolor from 'tinycolor2';
 
 export default function Slide(props: { slide: StoryblokType['slides'][number] }) {
-  const [footerHeightAtom, setFooterHeightAtom] = useAtom(FooterHeightAtom);
-
   return (
     <div className={`keen-slider__slide ${SlideContainerStyle()}`}>
       {props.slide.background_image && (
         <img
-          src={props.slide.background_image}
+          src={props.slide.background_image.filename}
           className={SlideBackgroundImageStyle()}
           style={{ filter: `blur(${props.slide.background_image_blur}px)` }}
         ></img>
@@ -57,6 +53,17 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
                 },
               },
             })}
+        </div>
+
+        <div className={SlideBottomImageContainerStyle()}>
+          {props.slide.bottom_images &&
+            props.slide.bottom_images.map((item) => (
+              <img
+                key={item.filename}
+                src={item.filename}
+                className={SlideBottomImageStyle()}
+              ></img>
+            ))}
         </div>
 
         <div style={{ height: 265 }}></div>

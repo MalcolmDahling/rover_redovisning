@@ -11,7 +11,7 @@ export const SlideContainerStyle = recipe({
     alignItems: 'center',
     justifyContent: 'center',
 
-    cursor: 'pointer',
+    cursor: 'grab',
 
     '@media': {
       [MediaBreakpoints.tablet]: {
@@ -70,15 +70,19 @@ globalStyle(`${SlideInnerContainerStyle()}  *`, {
 
 export const SlideHeadingContainerStyle = recipe({
   base: {
-    textAlign: 'center',
     paddingRight: 10,
     paddingLeft: 10,
+
+    cursor: 'text',
+    userSelect: 'text',
+    textAlign: 'center',
   },
 });
 
 export const SlideTextContainerStyle = recipe({
   base: {
     userSelect: 'text',
+    cursor: 'text',
 
     '@media': {
       [MediaBreakpoints.desktop]: {
@@ -140,5 +144,21 @@ export const SlideLinkStyle = recipe({
     borderBottom: '2px solid transparent',
 
     transition: 'all 250ms',
+  },
+});
+
+export const SlideBottomImageContainerStyle = recipe({
+  base: {
+    padding: 20,
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 20,
+  },
+});
+
+export const SlideBottomImageStyle = recipe({
+  base: {
+    maxWidth: 200,
   },
 });

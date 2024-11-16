@@ -4,6 +4,7 @@ import Header from '@/components/Header/Header';
 import Main from '@/components/Main/Main';
 import MenuModal from '@/components/MenuModal/MenuModal';
 import SetFavicons from '@/components/SetFavicons/SetFavicons';
+import SetMetaData from '@/components/SetMetaData/SetMetaData';
 import Slider from '@/components/Slider/Slider';
 import Wrapper from '@/components/Wrapper/Wrapper';
 import { StoryblokType } from '@/types/storyblok';
@@ -17,6 +18,7 @@ export default async function Index() {
 
   return (
     <Wrapper>
+      <SetMetaData {...data.meta_data}></SetMetaData>
       <SetFavicons {...data.favicon}></SetFavicons>
       <Header
         website_name={data.website_name}

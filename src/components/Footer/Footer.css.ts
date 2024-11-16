@@ -11,7 +11,7 @@ export const FooterStyle = recipe({
   },
 });
 
-export const FooterGridContainerStyle = recipe({
+export const FooterFlexContainerStyle = recipe({
   base: {
     margin: 'auto',
     maxWidth: 1200,
@@ -63,5 +63,22 @@ export const FooterLinkStyle = recipe({
     ':hover': {
       textDecorationColor: Colors.white,
     },
+  },
+});
+
+export const FooterBottomTextStyle = recipe({
+  base: {
+    margin: 'auto',
+    maxWidth: 1200,
+    padding: '10px 20px',
+
+    color: Colors.white,
+    textAlign: 'center',
+  },
+});
+
+export const FooterBottomLinkStyle = recipe({
+  base: {
+    color: Colors.white,
   },
 });
