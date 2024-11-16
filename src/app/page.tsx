@@ -68,7 +68,7 @@ export default async function Index() {
         ></meta>
         <meta
           property="og:image"
-          content={data.meta_data.canonical_url + '/images/og_image.webp'}
+          content={'https://rover-r2.vercel.app/images/og_image.webp'} //ändra till rätt url när sidan är live. måste vara hårdkodad
         ></meta>
         <meta
           property="og:image:width"
@@ -105,7 +105,7 @@ export default async function Index() {
         ></meta>
         <meta
           name="twitter:image"
-          content={data.meta_data.canonical_url + '/images/og_image.webp'}
+          content={'https://rover-r2.vercel.app/images/og_image.webp'} //ändra till rätt url när sidan är live. måste vara hårdkodad
         ></meta>
         <meta
           name="twitter:text:title"
@@ -135,7 +135,7 @@ export default async function Index() {
 
         <link
           rel="apple-touch-icon"
-          href={data.meta_data.canonical_url + '/images/apple_touch_icon.png'}
+          href={'https://rover-r2.vercel.app/images/apple_touch_icon.png'} //ändra till rätt url när sidan är live. måste vara hårdkodad
         ></link>
         <meta
           name="apple-mobile-web-app-status-bar-style"
