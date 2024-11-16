@@ -164,6 +164,28 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           sizes="48x48"
         ></link>
 
+        {/*PRELOAD IMAGES*/}
+        {data.slides.map((item) => (
+          <>
+            {item.background_image.filename && (
+              <link
+                key={item.image.filename + Math.random()}
+                rel="preload"
+                as="image"
+                href={item.background_image.filename}
+              ></link>
+            )}
+            {item.image.filename && (
+              <link
+                key={item.background_image.filename + Math.random()}
+                rel="preload"
+                as="image"
+                href={item.image.filename}
+              ></link>
+            )}
+          </>
+        ))}
+
         <script type="application/ld+json">
           {JSON.stringify({
             '@context': 'https://schema.org',
