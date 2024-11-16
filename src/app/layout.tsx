@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ></meta>
         <meta
           property="og:image"
-          content={metaDataAtom.canonical_url + '/images/og_image.webp'}
+          content={'https://rover-r2.vercel.app/images/og_image.webp'} //ändra till rätt url när sidan är live
         ></meta>
         <meta
           property="og:image:width"
@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ></meta>
         <meta
           name="twitter:image"
-          content={metaDataAtom.canonical_url + '/images/og_image.webp'}
+          content={'https://rover-r2.vercel.app/images/og_image.webp'} //ändra till rätt url när sidan är live
         ></meta>
         <meta
           name="twitter:text:title"
@@ -129,7 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <link
           rel="apple-touch-icon"
-          href={metaDataAtom.canonical_url + '/images/apple_touch_icon.png'}
+          href={'https://rover-r2.vercel.app/images/apple_touch_icon.png'} //ändra till rätt url när sidan är live
         ></link>
         <meta
           name="apple-mobile-web-app-status-bar-style"
