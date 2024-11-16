@@ -110,10 +110,6 @@ type MetaData = {
   description: string;
   keywords: string;
 
-  og_image: {
-    filename: string;
-  };
-
   canonical_url: string;
   apple_touch_icon: {
     filename: string;
