@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ></meta>
         <meta
           property="og:image"
-          content={metaDataAtom.og_image.filename}
+          content="/images/og_image.webp"
         ></meta>
         <meta
           property="og:image:width"
@@ -99,7 +99,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         ></meta>
         <meta
           name="twitter:image"
-          content={metaDataAtom.og_image.filename}
+          content="/images/og_image.webp"
         ></meta>
         <meta
           name="twitter:text:title"
