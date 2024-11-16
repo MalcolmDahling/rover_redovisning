@@ -118,7 +118,4 @@ type MetaData = {
   apple_touch_icon: {
     filename: string;
   };
-
-  twitter_title: string;
-  twitter_description: string;
 };
