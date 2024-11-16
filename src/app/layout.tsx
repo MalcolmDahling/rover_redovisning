@@ -60,7 +60,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         ></meta>
         <meta
           property="og:image"
-          content={data.meta_data.canonical_url + 'images/og_image.webp'}
+          content={data.meta_data.og_image.filename}
         ></meta>
         <meta
           property="og:image:width"
@@ -97,7 +97,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         ></meta>
         <meta
           name="twitter:image"
-          content={data.meta_data.canonical_url + 'images/og_image.webp'}
+          content={data.meta_data.og_image.filename}
         ></meta>
         <meta
           name="twitter:text:title"
@@ -127,7 +127,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
         <link
           rel="apple-touch-icon"
-          href={data.meta_data.canonical_url + 'images/apple_touch_icon.png'}
+          href={data.meta_data.apple_touch_icon.filename}
         ></link>
         <meta
           name="apple-mobile-web-app-status-bar-style"

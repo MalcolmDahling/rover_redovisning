@@ -111,4 +111,11 @@ type MetaData = {
   keywords: string;
 
   canonical_url: string;
+
+  og_image: {
+    filename: string;
+  };
+  apple_touch_icon: {
+    filename: string;
+  };
 };
