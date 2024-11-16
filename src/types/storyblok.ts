@@ -100,7 +100,7 @@ type Favicon = {
   favicon_48x48: {
     filename: string;
   };
-  svg_favicon: {
+  favicon_svg: {
     filename: string;
   };
 };

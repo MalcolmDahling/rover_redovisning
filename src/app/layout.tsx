@@ -142,7 +142,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link
           rel="icon"
           type="image/svg+xml"
-          href={data.favicon.svg_favicon.filename}
+          href={data.favicon.favicon_svg.filename}
           sizes="any"
         />
         <link
