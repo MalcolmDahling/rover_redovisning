@@ -126,12 +126,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           name="apple-mobile-web-app-title"
           content={metaDataAtom.title}
         ></meta>
-        {metaDataAtom.apple_touch_icon.filename && (
-          <link
-            rel="apple-touch-icon"
-            href={metaDataAtom.apple_touch_icon.filename}
-          ></link>
-        )}
+
+        <link
+          rel="apple-touch-icon"
+          href={metaDataAtom.canonical_url + '/images/apple_touch_icon.png'}
+        ></link>
         <meta
           name="apple-mobile-web-app-status-bar-style"
           content="black-translucent"
