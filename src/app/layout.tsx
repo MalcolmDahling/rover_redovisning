@@ -101,6 +101,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           name="twitter:image"
           content={metaDataAtom.og_image.filename}
         ></meta>
+        <meta
+          name="twitter:text:title"
+          content={metaDataAtom.title}
+        ></meta>
 
         <meta
           httpEquiv="X-UA-Compatible"
