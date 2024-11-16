@@ -65,6 +65,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content={metaDataAtom.og_image.filename}
         ></meta>
         <meta
+          property="og:image:width"
+          content="1200"
+        ></meta>
+        <meta
+          property="og:image:height"
+          content="630"
+        ></meta>
+        <meta
           property="og:url"
           content={metaDataAtom.canonical_url}
         ></meta>
