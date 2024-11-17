@@ -1,6 +1,36 @@
 import { NextResponse } from 'next/server';
 const StoryblokClient = require('storyblok-js-client');
 
+function addSuffixToFilename(filename: string): string {
+  // List of formats supported by Storyblok for .webp conversion
+  const supportedExtensions = ['png', 'jpg', 'jpeg', 'gif'];
+
+  // Extract the file extension and check if it's supported
+  const extension = filename.split('.').pop()?.toLowerCase();
+  if (!extension || !supportedExtensions.includes(extension)) {
+    return filename; // Return the filename unchanged if it's not a supported format
+  }
+
+  if (filename.endsWith('/')) {
+    return `${filename}m/`;
+  }
+  return `${filename}/m/`;
+}
+
+function modifyFilenames(obj: any): void {
+  if (Array.isArray(obj)) {
+    obj.forEach(modifyFilenames);
+  } else if (obj && typeof obj === 'object') {
+    for (const key in obj) {
+      if (key === 'filename' && typeof obj[key] === 'string') {
+        obj[key] = addSuffixToFilename(obj[key]);
+      } else {
+        modifyFilenames(obj[key]);
+      }
+    }
+  }
+}
+
 export async function GET() {
   const storyblok = new StoryblokClient({
     accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
@@ -46,9 +76,15 @@ export async function GET() {
       logo: logo.data.stories[0].content,
       slides: arr,
       website_name: website_name.data.stories[0].content,
-      favicon: favicon.data.stories[0].content,
+      favicon: null,
       meta_data: meta_data.data.stories[0].content,
     };
+
+    // Add "/m/" to images to make Storyblok convert them into .webp images
+    modifyFilenames(stories);
+
+    // Don't add "/m/" to favicons
+    stories.favicon = favicon.data.stories[0].content;
 
     return new NextResponse(JSON.stringify(stories), {
       status: 200,

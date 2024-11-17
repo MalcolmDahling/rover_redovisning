@@ -169,7 +169,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <>
             {item.background_image.filename && (
               <link
-                key={item.image.filename + Math.random()}
+                key={item.image.filename + Math.random() + Date.now()}
                 rel="preload"
                 as="image"
                 href={item.background_image.filename}
@@ -177,7 +177,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             )}
             {item.image.filename && (
               <link
-                key={item.background_image.filename + Math.random()}
+                key={item.background_image.filename + Math.random() + Date.now()}
                 rel="preload"
                 as="image"
                 href={item.image.filename}
