@@ -2,8 +2,6 @@ import '@/styles/global.css';
 import { StoryblokType } from '@/types/storyblok';
 import React from 'react';
 
-export const dynamic = 'force-dynamic';
-
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api/storyblok' : `${process.env.URL}/api/storyblok`;
   const res = await fetch(url);
