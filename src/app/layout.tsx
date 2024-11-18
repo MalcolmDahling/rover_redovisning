@@ -55,6 +55,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           content={data.meta_data.title}
         ></meta>
         <meta
+          property="og:site_name"
+          content={data.meta_data.title}
+        ></meta>
+        <meta
           property="og:description"
           content={data.meta_data.description}
         ></meta>
