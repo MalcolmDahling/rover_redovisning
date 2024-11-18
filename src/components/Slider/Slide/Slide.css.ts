@@ -162,3 +162,19 @@ export const SlideBottomImageStyle = recipe({
     maxWidth: 200,
   },
 });
+
+export const SlideBottomSpacerStyle = recipe({
+  base: {
+    '@media': {
+      [MediaBreakpoints.desktop]: {
+        height: 155,
+      },
+      [MediaBreakpoints.tablet]: {
+        height: 176,
+      },
+      [MediaBreakpoints.mobile]: {
+        height: 343,
+      },
+    },
+  },
+});

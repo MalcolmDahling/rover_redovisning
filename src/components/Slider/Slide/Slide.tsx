@@ -1,4 +1,4 @@
-import { SlideBackgroundImageStyle, SlideBottomImageContainerStyle, SlideBottomImageStyle, SlideContainerStyle, SlideHeadingContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideLinkStyle, SlideTextContainerStyle } from './Slide.css';
+import { SlideBackgroundImageStyle, SlideBottomImageContainerStyle, SlideBottomImageStyle, SlideBottomSpacerStyle, SlideContainerStyle, SlideHeadingContainerStyle, SlideImageStyle, SlideInnerContainerStyle, SlideLinkStyle, SlideTextContainerStyle } from './Slide.css';
 import { StoryblokType } from '@/types/storyblok';
 import { render, MARK_LINK } from 'storyblok-rich-text-react-renderer';
 import { isValidElement } from 'react';
@@ -66,7 +66,7 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
             ))}
         </div>
 
-        <div style={{ height: 265 }}></div>
+        <div className={SlideBottomSpacerStyle()}></div>
       </div>
     </div>
   );

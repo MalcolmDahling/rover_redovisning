@@ -3,7 +3,6 @@ export type StoryblokType = {
   footer: Footer;
   logo: Logo;
   slides: Slide[];
-  website_name: WebsiteName;
   favicon: Favicon;
   meta_data: MetaData;
 };
@@ -80,12 +79,6 @@ type Slide = {
   bottom_images?: {
     filename: string;
   }[];
-};
-
-type WebsiteName = {
-  _uid: string;
-  name: string;
-  component: string;
 };
 
 type Favicon = {

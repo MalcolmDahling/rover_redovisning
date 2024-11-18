@@ -27,6 +27,7 @@ export const FooterFlexContainerStyle = recipe({
       [MediaBreakpoints.tablet]: {},
       [MediaBreakpoints.mobile]: {
         flexDirection: 'column',
+        gap: 20,
       },
     },
   },

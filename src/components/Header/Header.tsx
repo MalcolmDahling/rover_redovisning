@@ -10,7 +10,7 @@ import { MoveToSlideAtom } from '@/atoms/MoveToSlideAtom';
 import { StoryblokType } from '@/types/storyblok';
 import { useAtom } from 'jotai';
 
-export default function Header(props: { website_name: StoryblokType['website_name']; slides: StoryblokType['slides']; logo: StoryblokType['logo'] }) {
+export default function Header(props: { meta_data: StoryblokType['meta_data']; slides: StoryblokType['slides']; logo: StoryblokType['logo'] }) {
   const [moveToSlideAtom, setMoveToSlideAtom] = useAtom(MoveToSlideAtom);
   const { breakpoint } = useBreakpoint(Breakpoints);
 
@@ -23,7 +23,7 @@ export default function Header(props: { website_name: StoryblokType['website_nam
       <div className={HeaderContainerStyle()}>
         <Heading
           type="h2"
-          text={props.website_name.name}
+          text={props.meta_data.title}
           upperCase={true}
           multiLine={true}
           color="white"

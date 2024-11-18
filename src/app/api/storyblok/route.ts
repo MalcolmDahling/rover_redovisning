@@ -38,12 +38,11 @@ export async function GET() {
 
   try {
     /*prettier-ignore*/
-    const [contact_information, footer, logo, slides, website_name, favicon, meta_data] = await Promise.all([
+    const [contact_information, footer, logo, slides, favicon, meta_data] = await Promise.all([
       storyblok.get('cdn/stories', { starts_with: 'contact-information', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'footer', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'logo', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'slides', cv: +new Date() }),
-      storyblok.get('cdn/stories', { starts_with: 'website-name', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'favicon', cv: +new Date() }),
       storyblok.get('cdn/stories', { starts_with: 'meta-data', cv: +new Date() }),
     ]);
@@ -75,7 +74,6 @@ export async function GET() {
 
       logo: logo.data.stories[0].content,
       slides: arr,
-      website_name: website_name.data.stories[0].content,
       favicon: null,
       meta_data: meta_data.data.stories[0].content,
     };

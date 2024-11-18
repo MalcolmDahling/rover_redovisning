@@ -28,12 +28,12 @@ export default async function Index() {
     }
   }
 
-  logFilenames(data);
+  //logFilenames(data);
 
   return (
     <Wrapper>
       <Header
-        website_name={data.website_name}
+        meta_data={data.meta_data}
         slides={data.slides}
         logo={data.logo}
       ></Header>

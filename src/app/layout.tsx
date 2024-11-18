@@ -169,11 +169,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         ></link>
 
         {/*PRELOAD IMAGES*/}
-        {data.slides.map((item) => (
+        {data.slides.map((item, i) => (
           <>
             {item.background_image.filename && (
               <link
-                key={item.image.filename + Math.random() + Date.now()}
+                key={item.image.filename + i}
                 rel="preload"
                 as="image"
                 href={item.background_image.filename}
@@ -181,7 +181,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             )}
             {item.image.filename && (
               <link
-                key={item.background_image.filename + Math.random() + Date.now()}
+                key={item.background_image.filename + i * 1000}
                 rel="preload"
                 as="image"
                 href={item.image.filename}

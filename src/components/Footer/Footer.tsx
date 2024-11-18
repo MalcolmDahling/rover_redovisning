@@ -66,7 +66,7 @@ export default function Footer(props: { footer: StoryblokType['footer']; contact
         2024 - Hemsidan är utvecklad av{' '}
         <a
           className={FooterBottomLinkStyle()}
-          href="https://github.com/MalcolmDahling"
+          href="https://www.linkedin.com/in/malcolm-dahling-175841222/"
           target="_blank"
         >
           Malcolm Dahling
