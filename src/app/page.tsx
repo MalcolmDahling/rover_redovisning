@@ -14,19 +14,19 @@ export default async function Index() {
   const res = await fetch(url);
   const data: StoryblokType = await res.json();
 
-  function logFilenames(obj: any): void {
-    if (Array.isArray(obj)) {
-      obj.forEach(logFilenames);
-    } else if (obj && typeof obj === 'object') {
-      for (const key in obj) {
-        if (key === 'filename' && typeof obj[key] === 'string') {
-          console.log(obj[key]);
-        } else {
-          logFilenames(obj[key]);
-        }
-      }
-    }
-  }
+  // function logFilenames(obj: any): void {
+  //   if (Array.isArray(obj)) {
+  //     obj.forEach(logFilenames);
+  //   } else if (obj && typeof obj === 'object') {
+  //     for (const key in obj) {
+  //       if (key === 'filename' && typeof obj[key] === 'string') {
+  //         console.log(obj[key]);
+  //       } else {
+  //         logFilenames(obj[key]);
+  //       }
+  //     }
+  //   }
+  // }
 
   //logFilenames(data);
 

@@ -2,6 +2,8 @@ import '@/styles/global.css';
 import { StoryblokType } from '@/types/storyblok';
 import React from 'react';
 
+export const dynamic = 'force-dynamic';
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3000/api/storyblok' : `${process.env.URL}/api/storyblok`;
   const res = await fetch(url);
@@ -170,10 +172,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
         {/*PRELOAD IMAGES*/}
         {data.slides.map((item, i) => (
-          <>
+          <React.Fragment key={item._uid + i}>
             {item.background_image.filename && (
               <link
-                key={item.image.filename + i}
                 rel="preload"
                 as="image"
                 href={item.background_image.filename}
@@ -181,13 +182,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             )}
             {item.image.filename && (
               <link
-                key={item.background_image.filename + i * 1000}
                 rel="preload"
                 as="image"
                 href={item.image.filename}
               ></link>
             )}
-          </>
+          </React.Fragment>
         ))}
 
         <script type="application/ld+json">

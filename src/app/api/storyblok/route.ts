@@ -3,7 +3,7 @@ const StoryblokClient = require('storyblok-js-client');
 
 function addSuffixToFilename(filename: string): string {
   // List of formats supported by Storyblok for .webp conversion
-  const supportedExtensions = ['png', 'jpg', 'jpeg', 'gif'];
+  const supportedExtensions = ['png', 'jpg', 'jpeg'];
 
   // Extract the file extension and check if it's supported
   const extension = filename.split('.').pop()?.toLowerCase();

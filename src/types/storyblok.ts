@@ -1,3 +1,5 @@
+import { StoryblokRichtext } from 'storyblok-rich-text-react-renderer';
+
 export type StoryblokType = {
   contact_information: ContactInformation;
   footer: Footer;
@@ -34,17 +36,7 @@ type Footer = {
 type Logo = {
   _uid: string;
   image: {
-    id: number;
-    alt: string;
-    name: string;
-    focus: string;
-    title: string;
-    source: string;
     filename: string;
-    copyright: string;
-    fieldtype: string;
-    meta_data: Record<string, any>;
-    is_external_url: boolean;
   };
   component: string;
 };
@@ -52,21 +44,12 @@ type Logo = {
 type Slide = {
   _uid: string;
   order: number;
-  text: {
-    type: string;
-    content: {
-      type: string;
-      content: {
-        text: string;
-        type: string;
-      }[];
-    }[];
-  }[];
+  text: StoryblokRichtext;
   image: {
     filename: string;
   };
   image_width: string;
-  heading: string;
+  heading: StoryblokRichtext;
   component: string;
   menu_title: string;
   text_color: 'black' | 'white';
