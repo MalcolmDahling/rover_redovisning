@@ -11,6 +11,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="sv">
       <head>
         <meta
+          name="google-site-verification"
+          content="FqJT5i-3mgzYbeR59gzAhdHjASLvUOK4LDiNizKWobc"
+        />
+
+        <meta
           name="author"
           content="Malcolm Dahling and Jonas Sahlström"
         ></meta>
