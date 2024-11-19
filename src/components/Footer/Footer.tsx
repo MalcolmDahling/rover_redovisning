@@ -66,18 +66,18 @@ export default function Footer(props: { footer: StoryblokType['footer']; contact
         2024 - Hemsidan är utvecklad av{' '}
         <a
           className={FooterBottomLinkStyle()}
-          href="https://www.linkedin.com/in/malcolm-dahling-175841222/"
-          target="_blank"
-        >
-          Malcolm Dahling
-        </a>
-        <span> och </span>
-        <a
-          className={FooterBottomLinkStyle()}
           href="https://www.linkedin.com/in/jonas-sahlstr%C3%B6m-888209135/"
           target="_blank"
         >
           Jonas Sahlström
+        </a>
+        <span> och </span>
+        <a
+          className={FooterBottomLinkStyle()}
+          href="https://www.linkedin.com/in/malcolm-dahling-175841222/"
+          target="_blank"
+        >
+          Malcolm Dahling
         </a>
       </div>
     </footer>
