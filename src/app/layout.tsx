@@ -72,6 +72,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           content={data.meta_data.og_image.filename}
         ></meta>
         <meta
+          property="og:image:alt"
+          content="Rovér Redovisning"
+        ></meta>
+        <meta
           property="og:image:width"
           content="1200"
         ></meta>
