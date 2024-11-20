@@ -17,7 +17,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
         <meta
           name="author"
-          content="Malcolm Dahling and Jonas Sahlström"
+          content="Jonas Sahlström and Malcolm Dahling"
         ></meta>
         <title>{data.meta_data.title}</title>
         <meta
