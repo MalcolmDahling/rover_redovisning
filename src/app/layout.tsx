@@ -16,6 +16,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
 
         <meta
+          name="facebook-domain-verification"
+          content="14nfbcimjlq988o2n4z3hem2c2numv"
+        />
+
+        <meta
           name="author"
           content="Jonas Sahlström and Malcolm Dahling"
         ></meta>
