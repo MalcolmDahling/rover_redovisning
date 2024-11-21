@@ -32,7 +32,8 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
             render(props.slide.text, {
               markResolvers: {
                 [MARK_LINK]: (children, props) => {
-                  let linkColor = isValidElement(children) && children.props?.style?.color ? children.props.style.color : 'inherit';
+                  let linkColor = isValidElement(children) && children?.props?.children?.props?.style?.color ? children.props.children.props.style.color : 'inherit';
+
                   linkColor = tinycolor(linkColor);
 
                   return (
