@@ -50,11 +50,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           ></link>
         )}
 
-        <link
-          rel="preconnect"
-          href="https://api.storyblok.com/v2/cdn/"
-        ></link>
-
         <meta
           property="og:title"
           content={data.meta_data.title}
