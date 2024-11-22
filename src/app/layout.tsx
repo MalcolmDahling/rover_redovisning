@@ -178,7 +178,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         ></link>
 
         {/*PRELOAD IMAGES*/}
-        {/* {data.slides.map((item, i) => (
+        {data.slides.map((item, i) => (
           <React.Fragment key={item._uid + i}>
             {item.background_image.filename && (
               <link
@@ -195,7 +195,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               ></link>
             )}
           </React.Fragment>
-        ))} */}
+        ))}
 
         <script type="application/ld+json">
           {JSON.stringify({
