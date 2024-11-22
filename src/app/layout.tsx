@@ -16,11 +16,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
 
         <meta
-          name="facebook-domain-verification"
-          content="14nfbcimjlq988o2n4z3hem2c2numv"
-        />
-
-        <meta
           name="author"
           content="Jonas Sahlström and Malcolm Dahling"
         ></meta>
@@ -183,7 +178,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         ></link>
 
         {/*PRELOAD IMAGES*/}
-        {data.slides.map((item, i) => (
+        {/* {data.slides.map((item, i) => (
           <React.Fragment key={item._uid + i}>
             {item.background_image.filename && (
               <link
@@ -200,7 +195,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               ></link>
             )}
           </React.Fragment>
-        ))}
+        ))} */}
 
         <script type="application/ld+json">
           {JSON.stringify({
