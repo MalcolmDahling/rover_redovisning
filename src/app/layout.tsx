@@ -117,10 +117,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           content="IE=edge"
         ></meta>
         <meta
-          name="referrer"
-          content="no-referrer"
-        ></meta>
-        <meta
           name="mobile-web-app-capable"
           content="yes"
         ></meta>
