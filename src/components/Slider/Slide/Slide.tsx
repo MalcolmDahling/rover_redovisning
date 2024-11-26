@@ -6,7 +6,7 @@ import tinycolor from 'tinycolor2';
 
 export default function Slide(props: { slide: StoryblokType['slides'][number] }) {
   return (
-    <div className={`keen-slider__slide ${SlideContainerStyle()}`}>
+    <article className={`keen-slider__slide ${SlideContainerStyle()}`}>
       {props.slide.background_image && (
         <img
           src={props.slide.background_image.filename}
@@ -69,6 +69,6 @@ export default function Slide(props: { slide: StoryblokType['slides'][number] })
 
         <div className={SlideBottomSpacerStyle()}></div>
       </div>
-    </div>
+    </article>
   );
 }

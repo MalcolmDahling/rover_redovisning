@@ -28,7 +28,7 @@ export default function MenuModal(props: { slides: StoryblokType['slides'] }) {
   }
 
   return (
-    <div className={MenuModalContainerStyle({ show: menuModalToggleAtom })}>
+    <nav className={MenuModalContainerStyle({ show: menuModalToggleAtom })}>
       {props.slides.map((item) => (
         <MenuModalItem
           key={item.menu_title}
@@ -36,6 +36,6 @@ export default function MenuModal(props: { slides: StoryblokType['slides'] }) {
           onClick={() => handleClick(item.order)}
         ></MenuModalItem>
       ))}
-    </div>
+    </nav>
   );
 }

@@ -14,7 +14,7 @@ export default function MenuDesktop(props: { slides: StoryblokType['slides'] }) 
   }
 
   return (
-    <div className={MenuDesktopContainerStyle()}>
+    <nav className={MenuDesktopContainerStyle()}>
       {props.slides.map((item) => (
         <MenuDesktopButton
           key={item.menu_title}
@@ -25,6 +25,6 @@ export default function MenuDesktop(props: { slides: StoryblokType['slides'] }) 
           }}
         ></MenuDesktopButton>
       ))}
-    </div>
+    </nav>
   );
 }
