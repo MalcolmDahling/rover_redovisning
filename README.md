@@ -1,1 +1,1 @@
-<center><h1><a href="https://roverredovisning.se/">LIVE WEBSITE</a></h1></center>
+<h1 align="center"><a href="https://roverredovisning.se/">LIVE WEBSITE</a></h1>
